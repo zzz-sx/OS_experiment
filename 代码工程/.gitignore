@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.env*
+state/
+evidence/
+lab-data/
+config.local.json
+config.classroom.json
+*.pem
+*.key
+.DS_Store

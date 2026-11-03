@@ -1,0 +1,17 @@
+{
+  "endpoint": "https://api.modelarts-maas.com/v2/chat/completions",
+  "model": "openpangu-2.0-flash",
+  "max_rounds": 4,
+  "max_tool_calls": 8,
+  "max_calls_per_round": 4,
+  "max_output_tokens": 1800,
+  "max_request_bytes": 120000,
+  "max_tool_result_bytes": 32000,
+  "max_requests_per_run": 4,
+  "budget_cny": 1.0,
+  "per_request_reserve_cny": 0.2,
+  "input_cny_per_million": 0.8,
+  "output_cny_per_million": 1.6,
+  "coupon_expires_at": "2026-12-16T00:00:00+08:00",
+  "max_total_requests": 6
+}

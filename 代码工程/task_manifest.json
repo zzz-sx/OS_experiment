@@ -1,0 +1,137 @@
+{
+  "version": "2026-10-26",
+  "note": "初始发放状态，完成情况以本人阶段检查为准",
+  "tools": [
+    {
+      "name": "get_time",
+      "initial_state": "已提供",
+      "student_file": "os_tools.py",
+      "tasks": []
+    },
+    {
+      "name": "get_memory_info",
+      "initial_state": "已提供示例",
+      "student_file": "students/memory.py",
+      "tasks": []
+    },
+    {
+      "name": "list_top_processes",
+      "initial_state": "TODO",
+      "student_file": "students/memory.py",
+      "tasks": [
+        "M1"
+      ]
+    },
+    {
+      "name": "get_process_memory",
+      "initial_state": "TODO",
+      "student_file": "students/memory.py",
+      "tasks": [
+        "M2",
+        "M2a"
+      ]
+    },
+    {
+      "name": "analyze_memory_patterns",
+      "initial_state": "TODO",
+      "student_file": "students/memory.py",
+      "tasks": [
+        "M3"
+      ]
+    },
+    {
+      "name": "sample_process_memory",
+      "initial_state": "TODO",
+      "student_file": "students/memory.py",
+      "tasks": [
+        "M4",
+        "M4a"
+      ]
+    },
+    {
+      "name": "simulate_page_fault",
+      "initial_state": "包装已提供，算法TODO",
+      "student_file": "students/algorithms.py",
+      "tasks": [
+        "A1"
+      ]
+    },
+    {
+      "name": "get_filesystem_info",
+      "initial_state": "TODO",
+      "student_file": "students/filesystem.py",
+      "tasks": [
+        "F1"
+      ]
+    },
+    {
+      "name": "analyze_file_distribution",
+      "initial_state": "TODO",
+      "student_file": "students/filesystem.py",
+      "tasks": [
+        "F2"
+      ]
+    },
+    {
+      "name": "trace_file_access",
+      "initial_state": "TODO",
+      "student_file": "students/filesystem.py",
+      "tasks": [
+        "F3"
+      ]
+    },
+    {
+      "name": "simulate_disk_allocation",
+      "initial_state": "包装已提供，算法TODO",
+      "student_file": "students/algorithms.py",
+      "tasks": [
+        "A3"
+      ]
+    },
+    {
+      "name": "get_process_tree",
+      "initial_state": "TODO",
+      "student_file": "students/process.py",
+      "tasks": [
+        "P1"
+      ]
+    },
+    {
+      "name": "monitor_context_switches",
+      "initial_state": "TODO",
+      "student_file": "students/process.py",
+      "tasks": [
+        "P2"
+      ]
+    },
+    {
+      "name": "analyze_scheduling",
+      "initial_state": "TODO",
+      "student_file": "students/process.py",
+      "tasks": [
+        "P3",
+        "P3a"
+      ]
+    },
+    {
+      "name": "get_process_schedstat",
+      "initial_state": "TODO",
+      "student_file": "students/process.py",
+      "tasks": [
+        "P4"
+      ]
+    },
+    {
+      "name": "simulate_scheduler",
+      "initial_state": "包装已提供，算法TODO",
+      "student_file": "students/algorithms.py",
+      "tasks": [
+        "A2"
+      ]
+    }
+  ],
+  "optional_interaction_tasks": [
+    "N1",
+    "N2"
+  ]
+}
