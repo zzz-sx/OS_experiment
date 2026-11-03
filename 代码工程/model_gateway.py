@@ -23,19 +23,16 @@ def validate_config(config):
     elif config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions' or config.get('model')!='openpangu-2.0-flash':
         raise ValueError('endpoint/model must match audited Huawei MaaS V2 Flash configuration')
     for key,cap in [('max_rounds',6),('max_tool_calls',24),('max_calls_per_round',4),('max_requests_per_run',6),
-                    ('max_output_tokens',2400),('max_request_bytes',120000),('max_tool_result_bytes',64000)]:
+                    ('max_total_requests',100),('max_output_tokens',2400),('max_request_bytes',120000),('max_tool_result_bytes',64000)]:
+        if key=='max_total_requests' and key not in config:continue
         value=config.get(key)
         if type(value) is not int or not 1<=value<=cap: raise ValueError(f'{key}: integer 1..{cap}')
-    if 'max_total_requests' in config:
-        value=config['max_total_requests']
-        if type(value) is not int or value<1:raise ValueError('max_total_requests: positive integer when provided')
     for key in ['budget_cny','per_request_reserve_cny','input_cny_per_million','output_cny_per_million']:
         v=config[key]
         if type(v) not in (int,float) or not math.isfinite(v) or v<=0: raise ValueError(f'{key}: positive finite number')
     if config['budget_cny']>5: raise ValueError('teaching local budget cap: 5 CNY')
-    min_input,min_output=(2.0,8.0) if config.get('provider')=='deepseek' else (0.8,1.6)
-    if config['input_cny_per_million']<min_input or config['output_cny_per_million']<min_output:
-        raise ValueError('configured rates below conservative provider rates')
+    if config['input_cny_per_million']<0.8 or config['output_cny_per_million']<1.6:
+        raise ValueError('configured rates below verified 2026-10-12 uncached Flash rate')
     estimated_max=(config['max_request_bytes']*config['input_cny_per_million']+config['max_output_tokens']*config['output_cny_per_million'])/1000000
     if config['per_request_reserve_cny']<estimated_max: raise ValueError('reservation too small for configured request limits')
     # Byte-based input estimate is deliberately conservative, not a billing guarantee.
@@ -53,13 +50,12 @@ class BudgetLedger:
 
     def reserve(self):
         if datetime.now().astimezone() >= datetime.fromisoformat(self.config['coupon_expires_at']):
-            raise RuntimeError('配置的有效期已结束，程序停止发起付费请求。')
+            raise RuntimeError('券已过有效期，程序停止发起付费请求。')
         self.db.execute('BEGIN IMMEDIATE')
         try:
             used = self.db.execute('SELECT COALESCE(SUM(amount),0) FROM calls').fetchone()[0]
             count = self.db.execute('SELECT COUNT(*) FROM calls').fetchone()[0]
-            limit=self.config.get('max_total_requests')
-            if limit is not None and count >= limit:
+            if 'max_total_requests' in self.config and count >= self.config['max_total_requests']:
                 raise RuntimeError('累计模型请求达到上限，不可通过重启程序重置。')
             amount = self.config['per_request_reserve_cny']
             if used+amount > self.config['budget_cny']:
@@ -116,18 +112,18 @@ class Model:
         key=api_key(self.config)
         if not key:
             raise ValueError('请配置模型 API Key。')
-        ident = self.ledger.reserve() if self.ledger else None
+        ident = self.ledger.reserve()
         self.calls += 1
         try:
             response = await self.client.post(self.config['endpoint'],headers={
                 'Authorization':'Bearer '+key, 'Content-Type':'application/json'},json=payload)
         except httpx.TimeoutException:
-            raise RuntimeError('模型请求超时，请稍后重试。') from None
+            raise RuntimeError('模型请求超时，预留金额保留且不自动重试；请核对调用记录。') from None
         if response.status_code != 200:
             detail = response.text.replace(key,'[REDACTED]')[:800]
             raise RuntimeError(f'模型接口 HTTP {response.status_code}: {detail}')
         body = response.json()
-        cost = self.ledger.settle(ident,body.get('usage')) if self.ledger else None
+        cost = self.ledger.settle(ident,body.get('usage'))
         self.usage_log.append(dict(request=self.calls,usage=body.get('usage'),estimated_cny=cost))
         return body
 
