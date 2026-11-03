@@ -1,0 +1,532 @@
+{
+  "meta": null,
+  "nextCursor": null,
+  "tools": [
+    {
+      "name": "get_time",
+      "title": null,
+      "description": "返回 Server 的 UTC 时间，验证 MCP 通信。",
+      "inputSchema": {
+        "properties": {},
+        "title": "get_timeArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_memory_info",
+      "title": null,
+      "description": "采集当前系统内存和交换区计数；一次快照不能证明抖动。",
+      "inputSchema": {
+        "properties": {},
+        "title": "get_memory_infoArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "list_top_processes",
+      "title": null,
+      "description": "列出当前用户可见进程中 RSS 最高的进程，最多十个。",
+      "inputSchema": {
+        "properties": {
+          "limit": {
+            "default": 5,
+            "maximum": 10,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          }
+        },
+        "title": "list_top_processesArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_process_memory",
+      "title": null,
+      "description": "采集指定同用户进程的内存和部分映射；PID 必须先从工具结果获得。",
+      "inputSchema": {
+        "properties": {
+          "pid": {
+            "minimum": 1,
+            "title": "Pid",
+            "type": "integer"
+          },
+          "max_maps": {
+            "default": 12,
+            "maximum": 20,
+            "minimum": 1,
+            "title": "Max Maps",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "pid"
+        ],
+        "title": "get_process_memoryArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "analyze_memory_patterns",
+      "title": null,
+      "description": "只分析显式页面引用序列的重复间隔与相邻比例；不代表真实系统访问模式。",
+      "inputSchema": {
+        "properties": {
+          "pages": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 128,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Pages"
+          }
+        },
+        "title": "analyze_memory_patternsArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "simulate_page_fault",
+      "title": null,
+      "description": "教学模拟页面置换，返回缺页率和逐步日志；不改变内核。",
+      "inputSchema": {
+        "properties": {
+          "algorithm": {
+            "default": "FIFO",
+            "enum": [
+              "FIFO",
+              "LRU",
+              "CLOCK",
+              "OPT",
+              "RANDOM",
+              "SECOND_CHANCE",
+              "HYBRID"
+            ],
+            "title": "Algorithm",
+            "type": "string"
+          },
+          "frames": {
+            "default": 3,
+            "maximum": 16,
+            "minimum": 1,
+            "title": "Frames",
+            "type": "integer"
+          },
+          "pages": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "integer"
+                },
+                "maxItems": 128,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Pages"
+          },
+          "seed": {
+            "default": 42,
+            "maximum": 4294967295,
+            "minimum": 0,
+            "title": "Seed",
+            "type": "integer"
+          }
+        },
+        "title": "simulate_page_faultArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_filesystem_info",
+      "title": null,
+      "description": "查询实验目录所在文件系统的容量与 inode 数，不测碎片率。",
+      "inputSchema": {
+        "properties": {
+          "path": {
+            "default": ".",
+            "maxLength": 200,
+            "title": "Path",
+            "type": "string"
+          }
+        },
+        "title": "get_filesystem_infoArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "analyze_file_distribution",
+      "title": null,
+      "description": "在实验目录内按扩展名和修改时间统计文件；拒绝越界路径，不跟随符号链接。",
+      "inputSchema": {
+        "properties": {
+          "path": {
+            "default": ".",
+            "maxLength": 200,
+            "title": "Path",
+            "type": "string"
+          },
+          "max_files": {
+            "default": 500,
+            "maximum": 500,
+            "minimum": 1,
+            "title": "Max Files",
+            "type": "integer"
+          }
+        },
+        "title": "analyze_file_distributionArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "trace_file_access",
+      "title": null,
+      "description": "Linux inotify 限时观察单层路径的事件，不能统计每次 read 或读取字节数。",
+      "inputSchema": {
+        "properties": {
+          "path": {
+            "default": ".",
+            "maxLength": 200,
+            "title": "Path",
+            "type": "string"
+          },
+          "seconds": {
+            "default": 3,
+            "maximum": 10,
+            "minimum": 0.1,
+            "title": "Seconds",
+            "type": "number"
+          }
+        },
+        "title": "trace_file_accessArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "simulate_disk_allocation",
+      "title": null,
+      "description": "离散磁盘块分配模拟，返回分配图；不向真实磁盘写入模拟文件。",
+      "inputSchema": {
+        "properties": {
+          "strategy": {
+            "default": "contiguous",
+            "enum": [
+              "contiguous",
+              "linked",
+              "indexed"
+            ],
+            "title": "Strategy",
+            "type": "string"
+          },
+          "blocks": {
+            "default": 24,
+            "maximum": 128,
+            "minimum": 1,
+            "title": "Blocks",
+            "type": "integer"
+          },
+          "operations": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operations"
+          },
+          "block_size": {
+            "default": 4096,
+            "maximum": 65536,
+            "minimum": 64,
+            "title": "Block Size",
+            "type": "integer"
+          }
+        },
+        "title": "simulate_disk_allocationArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_process_tree",
+      "title": null,
+      "description": "返回当前用户可见进程的 PID、PPID、名称，父节点可能在范围外。",
+      "inputSchema": {
+        "properties": {
+          "limit": {
+            "default": 50,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          }
+        },
+        "title": "get_process_treeArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "monitor_context_switches",
+      "title": null,
+      "description": "pid省略时采样系统计数差，指定时采样同用户进程的自愿与非自愿切换差，不推断每次切换开销。",
+      "inputSchema": {
+        "properties": {
+          "pid": {
+            "anyOf": [
+              {
+                "minimum": 1,
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Pid"
+          },
+          "seconds": {
+            "default": 1,
+            "maximum": 5,
+            "minimum": 0.1,
+            "title": "Seconds",
+            "type": "number"
+          }
+        },
+        "title": "monitor_context_switchesArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "simulate_scheduler",
+      "title": null,
+      "description": "单CPU教学调度，任务为id/arrival/burst或交替CPU与IO的bursts；支持MLFQ提升与抢占。",
+      "inputSchema": {
+        "properties": {
+          "algorithm": {
+            "default": "RR",
+            "enum": [
+              "FCFS",
+              "SJF",
+              "RR",
+              "MLFQ"
+            ],
+            "title": "Algorithm",
+            "type": "string"
+          },
+          "quantum": {
+            "default": 2,
+            "maximum": 10,
+            "minimum": 1,
+            "title": "Quantum",
+            "type": "integer"
+          },
+          "jobs": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "maxItems": 12,
+                "minItems": 1,
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Jobs"
+          },
+          "boost_interval": {
+            "default": 20,
+            "maximum": 100,
+            "minimum": 0,
+            "title": "Boost Interval",
+            "type": "integer"
+          }
+        },
+        "title": "simulate_schedulerArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "analyze_scheduling",
+      "title": null,
+      "description": "Linux 两次 /proc/stat 采样的 CPU 时间比例，不能直接测调度延迟。",
+      "inputSchema": {
+        "properties": {
+          "seconds": {
+            "default": 1,
+            "maximum": 5,
+            "minimum": 0.1,
+            "title": "Seconds",
+            "type": "number"
+          }
+        },
+        "title": "analyze_schedulingArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "sample_process_memory",
+      "title": null,
+      "description": "限时重复采样同用户进程RSS、minor/major faults与全局swap差，不把它们混为抖动。",
+      "inputSchema": {
+        "properties": {
+          "pid": {
+            "minimum": 1,
+            "title": "Pid",
+            "type": "integer"
+          },
+          "samples": {
+            "default": 3,
+            "maximum": 10,
+            "minimum": 2,
+            "title": "Samples",
+            "type": "integer"
+          },
+          "interval": {
+            "default": 0.2,
+            "maximum": 0.5,
+            "minimum": 0.1,
+            "title": "Interval",
+            "type": "number"
+          }
+        },
+        "required": [
+          "pid"
+        ],
+        "title": "sample_process_memoryArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    },
+    {
+      "name": "get_process_schedstat",
+      "title": null,
+      "description": "读取同用户进程的schedstat区间差；未启用调度统计时明确降级，不更改内核设置。",
+      "inputSchema": {
+        "properties": {
+          "pid": {
+            "minimum": 1,
+            "title": "Pid",
+            "type": "integer"
+          },
+          "seconds": {
+            "default": 0.2,
+            "maximum": 5,
+            "minimum": 0.1,
+            "title": "Seconds",
+            "type": "number"
+          }
+        },
+        "required": [
+          "pid"
+        ],
+        "title": "get_process_schedstatArguments",
+        "type": "object"
+      },
+      "outputSchema": null,
+      "icons": null,
+      "annotations": null,
+      "meta": null,
+      "execution": null
+    }
+  ]
+}

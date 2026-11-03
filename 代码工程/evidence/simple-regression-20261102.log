@@ -1,0 +1,68 @@
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32207 running stdin=<_UnixWritePipeTransport fd=9 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=10 polling>>
+HTTP Request: POST https://api.modelarts-maas.com/v2/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.modelarts-maas.com/v2/chat/completions "HTTP/1.1 200 OK"
+<_UnixReadPipeTransport fd=10 polling> was closed by peer
+<_UnixSubprocessTransport pid=32207 running stdin=<_UnixWritePipeTransport closed fd=9 closed> stdout=<_UnixReadPipeTransport closed fd=10 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32213 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32213 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32222 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32222 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32229 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=32229 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32235 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=32235 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32239 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=32239 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32246 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=32246 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32259 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32259 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32277 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32277 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32288 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32288 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+...............HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+.execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=32296 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+HTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 200 OK"
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=32296 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+..
+----------------------------------------------------------------------
+Ran 24 tests in 8.526s
+
+OK
+测试传输已收到真实工具证据。
+模型未返回正文。
+{"stage": "framework", "status": "passed", "success": true, "passed": 2, "pending": [], "evidence": "/tmp/tmpm388_3gp/framework.json"}
+【离线模型模拟，非云端推理】
+已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。
+[{"ok":true,"kind":"observation","sampled_at":"2026-11-02T11:35:15.153326+00:00","platform":"Linux","source":"psutil.virtual_memory / swap_memory","units":{"memory":"bytes","percent":"percent"},"data":{"total":3570696192,"available":2674581504,"used":896114688,"free":1976741888,"percent":25.1,"swap":{"total":0,"used":0,"free":0,"percent":0.0,"sin":0,"sout":0}},"error":null,"limitations":["available是估计值；一次快照不足以证明抖动。","swap.total=0表示未配置可用交换区，不能据此断言无缺页。"]},{"ok":true,"kind":"status","sampled_at":"2026-11-02T11:35:15.160487+00:00","platform":"Linux","source":"Python datetime","units":{},"data":{"timezone":"UTC"},"error":null,"limitations":[]}]
+【本次任务未完整完成，请检查trace】
+【离线模型模拟，非云端推理】
+已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。
+[{"ok":true,"kind":"status","sampled_at":"2026-11-02T11:35:15.346181+00:00","platform":"Linux","source":"datetime","units":{},"data":{"timezone":"UTC"},"error":null,"limitations":[]},{"ok":false,"kind":"status","sampled_at":"2026-11-02T11:35:15.346203+00:00","platform":"Linux","source":"student","units":{},"data":null,"error":"NOT_IMPLEMENTED","limitations":[]}]
+【解释达到长度上限】
+半句

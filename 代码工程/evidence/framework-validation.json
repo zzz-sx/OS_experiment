@@ -1,0 +1,158 @@
+{
+  "started_at": "2026-11-02T11:54:08.124957+00:00",
+  "stage": "framework",
+  "advanced": false,
+  "scope": "openEuler_target",
+  "platform": "Linux-6.6.0-112.0.0.104.oe2403.x86_64-x86_64-with-glibc2.38",
+  "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+  "os_release": "NAME=\"openEuler\"\nVERSION=\"24.03 (LTS)\"\nID=\"openEuler\"\nVERSION_ID=\"24.03\"\nPRETTY_NAME=\"openEuler 24.03 (LTS)\"\nANSI_COLOR=\"0;31\"\n\n",
+  "cloud_model_called": false,
+  "dependencies": {
+    "mcp": "1.30.0",
+    "psutil": "7.2.2",
+    "httpx": "0.28.1",
+    "pydantic": "2.13.5",
+    "jsonschema": "4.26.0"
+  },
+  "source_sha256": {
+    "configure_lab.py": "2ccdfb288b3669a49da21637926f87ead86a97c2a92419bb442d3c8fee12e37c",
+    "week8_natural_language.py": "15282b855ac2b8f83e193e552d83f5ffad383f2b24e13848e93f5e2e9c2691e4",
+    "server.py": "5faf5cf7f6f1dbff1a131323f8761c97a071baf0a93316714270516310a03597",
+    "host.py": "dd96a85e60771dcd366dca2c3f8a7c9f6942cb766a8b3dc5be793b6a196c0078",
+    "target-validation.py": "bedc6a8020320120da5ba0373ba73c9f5dda464cfc5e3f29afde558ba9ad93fa",
+    "controlled_runner.py": "e7442192593c44a12afd78f68ba9cf522ce1a05e5bec76bdcea546834ef640c6",
+    "web_ui.py": "35fdf302b2f8f71134efa1f2f912097eb78d0e2931b1804dc5e2a0ea54393d54",
+    "model_gateway.py": "9732bddad87b38e6ea9b6501eb771c48f555301549c24a3a7d6eee19e6b2990b",
+    "prepare_lab.py": "962e5e9c44bc8322fae479390a4a43b2a5f787bd037b1c9905f2f5f7c48520f4",
+    "presentation_helpers.py": "5d5b1a1be5749aa3c7e6161b60ee5ed438ad14d2d83189b9c428d9e6ad310631",
+    "process_server.py": "ce2bb57d7fc7a73140c4250c7fd6b3cf54d0580396746e95263de3f4305f4601",
+    "mcp_bridge.py": "3fc0f6974f62add063491d7f104372ba5b6bf4e9e9381701f69f51610767934e",
+    "api_probe.py": "507e3a5b9d0c70e91a3e4b47f7bcc486669e875cab465f7070ae8ea3128e427b",
+    "experiments.py": "4a6fad9722ef10f18551a08a15e1ba95f1fd475df7a03cee98dcaf7faa00f6ac",
+    "algorithms.py": "3f6321cb7512c5e7ef8d87516d4bf0f0bb4d4e9f1e7209a2d7797a3e02a0f935",
+    "os_tools.py": "72ec7ec1c286446f2bfaad1082153af7710fc1a2ce94814fb07bbcad1cb2ea32",
+    "assessment.py": "74df76b36791ad21027a19aae19fe051d0a8562cbc11df5fb2a3607ea4becd48",
+    "test_framework.py": "278073f564ae5b8d85bac3822a6ae73d68d36ac79e4ab7daff43a0c0aad4ce84",
+    "test_student_custom.py": "a5fd4671884c33045bef76840285a94cbe535f64a1da31e7db5af15b12fd6dfc",
+    "test_setup.py": "13ebb502ac48b85a05757aa6d9e528338bc9c3dcac8c5b90ce029a56f74d5c9a",
+    "validate_lab.py": "b8f4ee0ac001eeef8aad29857be9536d14a2a807848b5f77e69b9f0a199036ab",
+    "prepare_fixtures.py": "b37a310ad190c70cd96c75dfceebe212c40a29f4030f821ebd162e31aaf65cfa",
+    "lab_common.py": "410af88120fd565c8aa65477dd7fdfc0d0e18cc8d529c2bc44c85cf5f1a80110",
+    "test_deepseek.py": "e0c7f8d1f9b96150cab6ba55cdf12ba40216782d3ea382653a60ba831d9b3671",
+    "test_student_acceptance.py": "4618d5eb466d6ef8868d9717b56a0ee6d7a6561aaf948c777b3b1d84d95fa969",
+    "mcp_check.py": "da3260c0a908379e2fb51f2999dec50c758fa3d37dc7d805c409253fa2d33d9a",
+    "preflight.py": "e9d0e19e59bfa5ef1a8dab0004a370978c4c23e8132ad3485d2c7645f8d69e5c",
+    "filesystem_server.py": "96bd53b2d824ea9fca3992c948cb47acc95c819ccbc19542980087b6e7b987ca",
+    "memory_server.py": "95dfea97cdf76c41dfc5826ce66ee261c3db7c7c0d774027e3775c6aa7dc68d5",
+    "workload.py": "f6d8bceac4fd18cc9b1804b292352a0186d09ec6f9ab846d3efacd5852d8fcc8",
+    "students/process.py": "251e8c40c8df31234c64a685e2b64fae9f7536d643fde7e87818532b13e43acf",
+    "students/interaction_helpers.py": "78b446ae76614d676c287adf08c98c4a94abfa3a4dafe819b05931cd92601cfd",
+    "students/__init__.py": "d6c3dd20dfc55b3fd724a16eac8a1765d5bd168e8e5c6ca31f8b7dc774d4f949",
+    "students/algorithms.py": "e4b91592a80054039743001ab730448028b66206171ff1294feb43354f5c2581",
+    "students/filesystem.py": "b671a333299910a4d9e889d49979f330ac0d6f32aef968ef7b3ef21a9e921665",
+    "students/memory.py": "d4d373a07cf7974d05441543d628926e1e666a2f347fc14336e9581a403fb3cc"
+  },
+  "tools": [
+    "get_time",
+    "get_memory_info",
+    "list_top_processes",
+    "get_process_memory",
+    "analyze_memory_patterns",
+    "simulate_page_fault",
+    "get_filesystem_info",
+    "analyze_file_distribution",
+    "trace_file_access",
+    "simulate_disk_allocation",
+    "get_process_tree",
+    "monitor_context_switches",
+    "simulate_scheduler",
+    "analyze_scheduling",
+    "sample_process_memory",
+    "get_process_schedstat"
+  ],
+  "calls": [
+    {
+      "tool": "get_time",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "status",
+        "sampled_at": "2026-11-02T11:54:08.598774+00:00",
+        "platform": "Linux",
+        "source": "Python datetime",
+        "units": {},
+        "data": {
+          "timezone": "UTC"
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "get_memory_info",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-02T11:54:08.600564+00:00",
+        "platform": "Linux",
+        "source": "psutil.virtual_memory / swap_memory",
+        "units": {
+          "memory": "bytes",
+          "percent": "percent"
+        },
+        "data": {
+          "total": 3570696192,
+          "available": 2680180736,
+          "used": 890515456,
+          "free": 1972019200,
+          "percent": 24.9,
+          "swap": {
+            "total": 0,
+            "used": 0,
+            "free": 0,
+            "percent": 0.0,
+            "sin": 0,
+            "sout": 0
+          }
+        },
+        "error": null,
+        "limitations": [
+          "available是估计值；一次快照不足以证明抖动。",
+          "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+        ]
+      }
+    }
+  ],
+  "module_tools": {
+    "memory": [
+      "get_time",
+      "get_memory_info",
+      "list_top_processes",
+      "get_process_memory",
+      "analyze_memory_patterns",
+      "simulate_page_fault",
+      "sample_process_memory"
+    ],
+    "filesystem": [
+      "get_time",
+      "get_filesystem_info",
+      "analyze_file_distribution",
+      "trace_file_access",
+      "simulate_disk_allocation"
+    ],
+    "process": [
+      "get_time",
+      "get_process_tree",
+      "monitor_context_switches",
+      "simulate_scheduler",
+      "analyze_scheduling",
+      "get_process_schedstat"
+    ]
+  },
+  "success": true,
+  "status": "passed",
+  "finished_at": "2026-11-02T11:54:10.181657+00:00"
+}

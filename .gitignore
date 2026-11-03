@@ -1,0 +1,13 @@
+**/.venv/
+**/__pycache__/
+*.pyc
+**/.env*
+*.pem
+*.key
+*.p12
+*.pfx
+**/state/
+**/config.local.json
+**/config.classroom.json
+oslab-*.tar.gz
+*-private-snapshot-*.tar.gz

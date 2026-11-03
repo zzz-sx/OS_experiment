@@ -1,0 +1,101 @@
+test_cloud_message_mapping_without_network (test_framework.EndToEnd.test_cloud_message_mapping_without_network)
+用HTTP MockTransport核对真实模式的协议结构，禁止任何外网请求。 ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=6986 running stdin=<_UnixWritePipeTransport fd=8 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=9 polling>>
+Processing request of type ListToolsRequest
+HTTP Request: POST https://api.modelarts-maas.com/v2/chat/completions "HTTP/1.1 200 OK"
+模型请求 1，usage={'prompt_tokens': 10, 'completion_tokens': 5}，估算费用=1.6e-05
+Processing request of type CallToolRequest
+MCP get_memory_info: ok=True error=None
+HTTP Request: POST https://api.modelarts-maas.com/v2/chat/completions "HTTP/1.1 200 OK"
+模型请求 2，usage={'prompt_tokens': 10, 'completion_tokens': 5}，估算费用=1.6e-05
+<_UnixReadPipeTransport fd=9 polling> was closed by peer
+<_UnixSubprocessTransport pid=6986 running stdin=<_UnixWritePipeTransport closed fd=8 closed> stdout=<_UnixReadPipeTransport closed fd=9 closed>> exited with return code 0
+ok
+test_empty_response_is_incomplete (test_framework.EndToEnd.test_empty_response_is_incomplete) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=6990 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=6990 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_failure_keeps_evidence (test_framework.EndToEnd.test_failure_keeps_evidence) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=6994 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+MCP get_memory_info: ok=True error=None
+Processing request of type CallToolRequest
+MCP get_time: ok=True error=None
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=6994 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_framework_real_mcp (test_framework.EndToEnd.test_framework_real_mcp) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7001 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+Processing request of type CallToolRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7001 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7005 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7005 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7011 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7011 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7015 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7015 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_mock_model_real_mcp (test_framework.EndToEnd.test_mock_model_real_mcp) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7021 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+MCP get_memory_info: ok=True error=None
+Processing request of type CallToolRequest
+MCP get_time: ok=True error=None
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7021 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_pending_cannot_be_hidden_by_other_success (test_framework.EndToEnd.test_pending_cannot_be_hidden_by_other_success) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7025 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+MCP get_time: ok=True error=None
+MCP get_process_tree: ok=False error=NOT_IMPLEMENTED
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7025 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_truncated_is_incomplete (test_framework.EndToEnd.test_truncated_is_incomplete) ... execute program '/home/oslab/oslab2403/代码工程/.venv/bin/python': <_UnixSubprocessTransport pid=7031 running stdin=<_UnixWritePipeTransport fd=7 idle bufsize=0> stdout=<_UnixReadPipeTransport fd=8 polling>>
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+MCP get_memory_info: ok=True error=None
+Processing request of type CallToolRequest
+MCP get_time: ok=True error=None
+<_UnixReadPipeTransport fd=8 polling> was closed by peer
+<_UnixSubprocessTransport pid=7031 running stdin=<_UnixWritePipeTransport closed fd=7 closed> stdout=<_UnixReadPipeTransport closed fd=8 closed>> exited with return code 0
+ok
+test_budget_is_persistent (test_framework.Infrastructure.test_budget_is_persistent) ... ok
+test_optional_helper_fallback (test_framework.Infrastructure.test_optional_helper_fallback) ... ok
+test_oversized_tool_result_preserves_error_contract (test_framework.Infrastructure.test_oversized_tool_result_preserves_error_contract) ... ok
+test_own_process_guard (test_framework.Infrastructure.test_own_process_guard) ... ok
+test_path_and_symlink_guard (test_framework.Infrastructure.test_path_and_symlink_guard) ... ok
+test_pending_is_explicit_not_success (test_framework.Infrastructure.test_pending_is_explicit_not_success) ... ok
+test_pid_requires_earlier_evidence (test_framework.Infrastructure.test_pid_requires_earlier_evidence) ... ok
+test_schema_error_never_dispatches (test_framework.Infrastructure.test_schema_error_never_dispatches) ... ok
+test_unknown_tool_never_dispatches (test_framework.Infrastructure.test_unknown_tool_never_dispatches) ... ok
+test_exact_openeuler_2403 (test_setup.Setup.test_exact_openeuler_2403) ... ok
+test_expired_or_naive_rejected (test_setup.Setup.test_expired_or_naive_rejected) ... ok
+test_hce_not_openeuler (test_setup.Setup.test_hce_not_openeuler) ... ok
+test_old_release_rejected (test_setup.Setup.test_old_release_rejected) ... ok
+test_personal_expiry_and_limits (test_setup.Setup.test_personal_expiry_and_limits) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 4.615s
+
+OK
+测试传输已收到真实工具证据。
+模型未返回正文。
+{"stage": "framework", "status": "passed", "success": true, "passed": 2, "pending": [], "evidence": "/tmp/tmpet0soxg3/framework.json"}
+【离线模型模拟，非云端推理】
+已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。
+[{"ok":true,"kind":"observation","sampled_at":"2026-10-27T15:28:50.536435+00:00","platform":"Linux","source":"psutil.virtual_memory / swap_memory","units":{"memory":"bytes","percent":"percent"},"data":{"total":3570704384,"available":3005845504,"used":564858880,"free":2590834688,"percent":15.8,"swap":{"total":0,"used":0,"free":0,"percent":0.0,"sin":0,"sout":0}},"error":null,"limitations":["available是估计值；一次快照不足以证明抖动。","swap.total=0表示未配置可用交换区，不能据此断言无缺页。"]},{"ok":true,"kind":"status","sampled_at":"2026-10-27T15:28:50.539003+00:00","platform":"Linux","source":"Python datetime","units":{},"data":{"timezone":"UTC"},"error":null,"limitations":[]}]
+【本次任务未完整完成，请检查trace】
+【离线模型模拟，非云端推理】
+已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。
+[{"ok":true,"kind":"status","sampled_at":"2026-10-27T15:28:50.601700+00:00","platform":"Linux","source":"datetime","units":{},"data":{"timezone":"UTC"},"error":null,"limitations":[]},{"ok":false,"kind":"status","sampled_at":"2026-10-27T15:28:50.601714+00:00","platform":"Linux","source":"student","units":{},"data":null,"error":"NOT_IMPLEMENTED","limitations":[]}]
+【解释达到长度上限】
+半句

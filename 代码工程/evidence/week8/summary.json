@@ -1,0 +1,67 @@
+{
+  "checked_at": "2026-11-02T11:18:08.785985+00:00",
+  "platform": "Linux-6.6.0-112.0.0.104.oe2403.x86_64-x86_64-with-glibc2.38",
+  "python": "3.11.16",
+  "uid": 1000,
+  "checks": {
+    "discovery": {
+      "passed": true,
+      "tool_count": 16,
+      "tool_names": [
+        "get_time",
+        "get_memory_info",
+        "list_top_processes",
+        "get_process_memory",
+        "analyze_memory_patterns",
+        "simulate_page_fault",
+        "get_filesystem_info",
+        "analyze_file_distribution",
+        "trace_file_access",
+        "simulate_disk_allocation",
+        "get_process_tree",
+        "monitor_context_switches",
+        "simulate_scheduler",
+        "analyze_scheduling",
+        "sample_process_memory",
+        "get_process_schedstat"
+      ],
+      "evidence": "tools-list.json"
+    },
+    "successful_call": {
+      "passed": true,
+      "result": {
+        "ok": true,
+        "kind": "status",
+        "sampled_at": "2026-11-02T11:18:09.300454+00:00",
+        "platform": "Linux",
+        "source": "Python datetime",
+        "units": {},
+        "data": {
+          "timezone": "UTC"
+        },
+        "error": null,
+        "limitations": []
+      },
+      "evidence": "get-time-raw.json"
+    },
+    "expected_rejection": {
+      "passed": true,
+      "arguments": {
+        "path": "../"
+      },
+      "result": {
+        "ok": false,
+        "kind": "observation",
+        "sampled_at": "2026-11-02T11:18:09.302840+00:00",
+        "platform": "Linux",
+        "source": "get_filesystem_info",
+        "units": {},
+        "data": null,
+        "error": "ValueError: path must stay inside OSLAB_ROOT",
+        "limitations": []
+      },
+      "evidence": "reject-path-raw.json"
+    }
+  },
+  "passed": true
+}

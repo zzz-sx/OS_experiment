@@ -1,0 +1,13 @@
+{
+  "meta": null,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"kind\": \"status\",\n  \"sampled_at\": \"2026-11-02T11:18:09.300454+00:00\",\n  \"platform\": \"Linux\",\n  \"source\": \"Python datetime\",\n  \"units\": {},\n  \"data\": {\n    \"timezone\": \"UTC\"\n  },\n  \"error\": null,\n  \"limitations\": []\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structuredContent": null,
+  "isError": false
+}

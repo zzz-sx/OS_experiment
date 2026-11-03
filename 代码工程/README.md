@@ -1,8 +1,45 @@
 # MCP 与 openEuler 操作系统实验学生框架
 
+## 第八周通信验收（openEuler 云机）
+
+教师补充要求自然语言接入：下面的通信检查只是基础部分，另须运行真实模型 Host。
+在远程 VS Code 终端直接执行：
+
+```bash
+python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" --config config.deepseek.example.json --output evidence/deepseek.json
+```
+
+本人 DeepSeek API Key 可填写在云机 `host.py` 顶部的 `DEEPSEEK_API_KEY`，或设置同名环境变量。
+填写到源码后，上传或提交代码前须清空。Host 经 stdio MCP 执行工具，再以 `role=tool` 回传结果。
+`evidence/deepseek.json` 保存工具模式、模型响应、工具参数和结果、消息及最终回答。
+终端显示最终答案，MCP 日志写入 `evidence/deepseek.server.log`。
+基础通信检查逐条执行下方命令，自然语言提问不重复执行基础自检。
+尚未用真实密钥运行时，不应把离线模拟结果作为自然语言验收通过证据。
+
+DeepSeek 配置在 `config.deepseek.example.json`，使用官方 `deepseek-flash` 非思考模式。
+DeepSeek 不设本地累计提问次数、费用上限或调用有效期；实际费用由 DeepSeek 平台计费。
+官方协议与费率核对于 2026-11-01：
+https://api-docs.deepseek.com/guides/tool_calls/ 、
+https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ 。
+
+在 VS Code Remote-SSH 中连接 `openeuler-oslab`，打开远程目录
+`/home/oslab/oslab2403/代码工程`。在远程终端运行：
+
+```bash
+source .venv/bin/activate
+mkdir -p evidence
+python mcp_check.py --list > evidence/tools-list.json
+python mcp_check.py get_time > evidence/get-time.json
+python mcp_check.py get_filesystem_info --args '{"path":"../"}' > evidence/reject-path.json
+```
+
+上述命令只使用本机 stdio MCP，不调用云模型。用 `>` 保存原始 JSON，在 VS Code 打开结果文件。
+查看工具发现、成功响应和拒绝响应；拒绝结果中的 `ok=false` 是预期行为。
+基础框架已注册的工具不等于学生模块均已实现。
+
 本版把操作系统采集和算法作为学生的主要实现任务。MCP连接、华为云模型适配、多轮工具调用、参数校验、基础前端和费用限制已提供。先让框架独立通过，再逐个完成学生模块。
 
-一人一组，实验持续第6—13周，第8/11/13周验收框架通信、三个模块、自然语言集成。使用本人账号和代金券，自行核价开通，无需逐项找教师审批。
+一人一组，实验持续第6—13周；第8周除框架通信外，按教师补充通知完成真实模型 Host 的基础工具自然语言调用。后续继续三个模块与自然语言集成。使用本人账号和代金券，自行核价开通，无需逐项找教师审批。
 
 ## 1 已提供和需要完成什么
 

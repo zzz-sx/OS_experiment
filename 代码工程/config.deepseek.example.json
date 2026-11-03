@@ -1,0 +1,11 @@
+{
+  "provider": "deepseek",
+  "endpoint": "https://api.deepseek.com/chat/completions",
+  "model": "deepseek-flash",
+  "max_rounds": 4,
+  "max_tool_calls": 4,
+  "max_calls_per_round": 2,
+  "max_output_tokens": 1200,
+  "max_request_bytes": 60000,
+  "max_tool_result_bytes": 16000
+}
