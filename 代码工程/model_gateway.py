@@ -5,27 +5,15 @@ from pathlib import Path
 import httpx
 BASE=Path(__file__).resolve().parent
 
-# 在云机私有副本填写；上传 GitHub 前留空，也可用同名环境变量。
-DEEPSEEK_API_KEY = ""
-
-def api_key(config):
-    if config.get('provider')=='deepseek':
-        return (DEEPSEEK_API_KEY or os.environ.get('DEEPSEEK_API_KEY','')).strip()
-    return os.environ.get('MAAS_API_KEY','').strip()
-
 def encode(value):
     return json.dumps(value,ensure_ascii=False,separators=(',',':'))
 
 def validate_config(config):
-    if config.get('provider')=='deepseek':
-        if config.get('endpoint')!='https://api.deepseek.com/chat/completions' or config.get('model')!='deepseek-flash':
-            raise ValueError('DeepSeek endpoint/model configuration is invalid')
-    elif config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions' or config.get('model')!='openpangu-2.0-flash':
+    if config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions' or config.get('model')!='openpangu-2.0-flash':
         raise ValueError('endpoint/model must match audited Huawei MaaS V2 Flash configuration')
     for key,cap in [('max_rounds',6),('max_tool_calls',24),('max_calls_per_round',4),('max_requests_per_run',6),
                     ('max_total_requests',100),('max_output_tokens',2400),('max_request_bytes',120000),('max_tool_result_bytes',64000)]:
-        if key=='max_total_requests' and key not in config:continue
-        value=config.get(key)
+        value=config.get(key,100 if key=='max_total_requests' else None)
         if type(value) is not int or not 1<=value<=cap: raise ValueError(f'{key}: integer 1..{cap}')
     for key in ['budget_cny','per_request_reserve_cny','input_cny_per_million','output_cny_per_million']:
         v=config[key]
@@ -55,7 +43,7 @@ class BudgetLedger:
         try:
             used = self.db.execute('SELECT COALESCE(SUM(amount),0) FROM calls').fetchone()[0]
             count = self.db.execute('SELECT COUNT(*) FROM calls').fetchone()[0]
-            if 'max_total_requests' in self.config and count >= self.config['max_total_requests']:
+            if count >= self.config.get('max_total_requests',100):
                 raise RuntimeError('累计模型请求达到上限，不可通过重启程序重置。')
             amount = self.config['per_request_reserve_cny']
             if used+amount > self.config['budget_cny']:
@@ -83,14 +71,10 @@ class Model:
         validate_config(config)
         self.config,self.mock,self.calls = config,mock,0
         self.usage_log = []
-        ledger_name='budget-deepseek.sqlite' if config.get('provider')=='deepseek' else 'budget.sqlite'
-        self.ledger = None if mock else BudgetLedger(BASE/'state'/ledger_name,config)
+        self.ledger = None if mock else BudgetLedger(BASE/'state'/'budget.sqlite',config)
         self.client = httpx.AsyncClient(timeout=httpx.Timeout(90,connect=10),follow_redirects=False)
 
     async def request(self,payload):
-        if self.config.get('provider')=='deepseek':
-            payload=dict(payload)
-            payload['max_tokens']=payload.pop('max_completion_tokens',self.config['max_output_tokens'])
         if self.calls >= self.config['max_requests_per_run']:
             raise RuntimeError('模型请求次数达到上限。')
         if len(encode(payload).encode()) > self.config['max_request_bytes']:
@@ -109,22 +93,22 @@ class Model:
             evidence = [json.loads(x['content']) for x in payload['messages'] if x['role']=='tool']
             answer = '【离线模型模拟，非云端推理】\n已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。\n'+encode(evidence)
             return {'choices':[{'message':{'role':'assistant','content':answer}}], 'usage':{}}
-        key=api_key(self.config)
-        if not key:
-            raise ValueError('请配置模型 API Key。')
+        if not os.environ.get('MAAS_API_KEY','').strip():
+            raise ValueError('MAAS_API_KEY is not configured')
         ident = self.ledger.reserve()
         self.calls += 1
         try:
             response = await self.client.post(self.config['endpoint'],headers={
-                'Authorization':'Bearer '+key, 'Content-Type':'application/json'},json=payload)
+                'Authorization':'Bearer '+os.environ['MAAS_API_KEY'], 'Content-Type':'application/json'},json=payload)
         except httpx.TimeoutException:
             raise RuntimeError('模型请求超时，预留金额保留且不自动重试；请核对调用记录。') from None
         if response.status_code != 200:
-            detail = response.text.replace(key,'[REDACTED]')[:800]
+            detail = response.text.replace(os.environ['MAAS_API_KEY'],'[REDACTED]')[:800]
             raise RuntimeError(f'模型接口 HTTP {response.status_code}: {detail}')
         body = response.json()
         cost = self.ledger.settle(ident,body.get('usage'))
         self.usage_log.append(dict(request=self.calls,usage=body.get('usage'),estimated_cny=cost))
+        print(f'模型请求 {self.calls}，usage={body.get("usage")}，估算费用={cost}',file=sys.stderr)
         return body
 
     async def close(self):

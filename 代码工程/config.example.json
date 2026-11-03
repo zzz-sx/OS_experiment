@@ -13,5 +13,5 @@
   "input_cny_per_million": 0.8,
   "output_cny_per_million": 1.6,
   "coupon_expires_at": "2026-12-16T00:00:00+08:00",
-  "max_total_requests": 6
+  "max_total_requests": 100
 }

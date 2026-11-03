@@ -1,61 +1,8 @@
 # MCP 与 openEuler 操作系统实验学生框架
 
-## 第八周通信验收（openEuler 云机）
-
-2026-11-03 已清理历史残余。`evidence/` 当前只保留 `tools-list.json`、`get-time.json`、
-`reject-path.json`、`framework-validation.json`、`framework-tests.log`、`mock.json`、`deepseek.json`。
-`lab-data` 可生成样本不提交；后续需要时运行 `python prepare_lab.py` 重新生成。
-
-教师补充要求自然语言接入：下面的通信检查只是基础部分，另须运行真实模型 Host。
-在远程 VS Code 终端直接执行：
-
-```bash
-python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" --config config.deepseek.example.json --output evidence/deepseek.json
-```
-
-本人 DeepSeek API Key 可填写在云机 `model_gateway.py` 顶部的 `DEEPSEEK_API_KEY`，或设置同名环境变量。
-填写到源码后，上传或提交代码前须清空。Host 经 stdio MCP 执行工具，再以 `role=tool` 回传结果。
-`evidence/deepseek.json` 沿用课程原版记录格式，保存工具调用 trace、最终回答和用量。
-终端显示简短答案，不打印 MCP 过程日志，也不额外生成 Server 日志文件。
-基础通信检查逐条执行下方命令，自然语言提问不重复执行基础自检。
-尚未用真实密钥运行时，不应把离线模拟结果作为自然语言验收通过证据。
-
-DeepSeek 配置在 `config.deepseek.example.json`，使用官方 `deepseek-flash` 非思考模式。
-DeepSeek 与原版共用配置校验和 `BudgetLedger`：配置本地预算、请求预留、费率和有效期，
-账本保存在 `state/budget-deepseek.sqlite`，与华为云的 `state/budget.sqlite` 分开。
-DeepSeek 配置不写 `max_total_requests`，因此不限制累计请求次数，也没有默认6次或100次限制。
-`max_requests_per_run=4` 只限制一次运行中的模型请求数；`budget_cny=1.0` 是本地累计预算。
-默认按高峰缓存未命中的输入2元/百万token、输出8元/百万token保守估算，实际以平台账单为准。
-为沿用课程结构保留 `coupon_expires_at` 字段；对 DeepSeek 它表示自设的本地停止请求时间，不表示平台赠券期限。
-预算、有效期等数值可在 `config.deepseek.example.json` 修改。停止 Host 后如需重置本地统计，可执行：
-
-```bash
-mv state/budget-deepseek.sqlite state/budget-deepseek-$(date +%Y%m%d-%H%M%S).sqlite
-```
-
-该命令备份旧账本，下次运行会新建账本；不会退还平台费用或改变平台余额。
-官方协议与费率核对于 2026-11-01：
-https://api-docs.deepseek.com/guides/tool_calls/ 、
-https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ 。
-
-在 VS Code Remote-SSH 中连接 `openeuler-oslab`，打开远程目录
-`/home/oslab/oslab2403/代码工程`。在远程终端运行：
-
-```bash
-source .venv/bin/activate
-mkdir -p evidence
-python mcp_check.py --list > evidence/tools-list.json
-python mcp_check.py get_time > evidence/get-time.json
-python mcp_check.py get_filesystem_info --args '{"path":"../"}' > evidence/reject-path.json
-```
-
-上述命令只使用本机 stdio MCP，不调用云模型。用 `>` 保存原始 JSON，在 VS Code 打开结果文件。
-查看工具发现、成功响应和拒绝响应；拒绝结果中的 `ok=false` 是预期行为。
-基础框架已注册的工具不等于学生模块均已实现。
-
 本版把操作系统采集和算法作为学生的主要实现任务。MCP连接、华为云模型适配、多轮工具调用、参数校验、基础前端和费用限制已提供。先让框架独立通过，再逐个完成学生模块。
 
-一人一组，实验持续第6—13周；第8周除框架通信外，按教师补充通知完成真实模型 Host 的基础工具自然语言调用。后续继续三个模块与自然语言集成。使用本人账号和代金券，自行核价开通，无需逐项找教师审批。
+一人一组，实验持续第6—13周，第8/11/13周验收框架通信、三个模块、自然语言集成。使用本人账号和代金券，自行核价开通，无需逐项找教师审批。
 
 ## 1 已提供和需要完成什么
 
