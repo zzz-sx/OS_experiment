@@ -5,25 +5,24 @@ from pathlib import Path
 import httpx
 BASE=Path(__file__).resolve().parent
 
+# 在云机私有副本填写；上传 GitHub 前留空，也可用同名环境变量。
+DEEPSEEK_API_KEY = ""
+
+def api_key(config):
+    if config.get('provider')=='deepseek':
+        return (DEEPSEEK_API_KEY or os.environ.get('DEEPSEEK_API_KEY','')).strip()
+    return os.environ.get('MAAS_API_KEY','').strip()
+
 def encode(value):
     return json.dumps(value,ensure_ascii=False,separators=(',',':'))
 
-def provider_of(config):
-    return config.get('provider','huawei')
-
-def api_key_env(config):
-    return 'DEEPSEEK_API_KEY' if provider_of(config)=='deepseek' else 'MAAS_API_KEY'
-
-def deadline_of(config):
-    return datetime.fromisoformat(config.get('requests_valid_until',config.get('coupon_expires_at','')))
-
 def validate_config(config):
-    profiles={'huawei':('https://api.modelarts-maas.com/v2/chat/completions','openpangu-2.0-flash'),
-              'deepseek':('https://api.deepseek.com/chat/completions','deepseek-flash')}
-    if provider_of(config) not in profiles or (config.get('endpoint'),config.get('model'))!=profiles[provider_of(config)]:
-        raise ValueError('endpoint/model must match the selected official provider profile')
-    if provider_of(config)=='deepseek':
+    if config.get('provider')=='deepseek':
+        if config.get('endpoint')!='https://api.deepseek.com/chat/completions' or config.get('model')!='deepseek-flash':
+            raise ValueError('DeepSeek endpoint/model configuration is invalid')
         return
+    if config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions' or config.get('model')!='openpangu-2.0-flash':
+        raise ValueError('endpoint/model must match audited Huawei MaaS V2 Flash configuration')
     for key,cap in [('max_rounds',6),('max_tool_calls',24),('max_calls_per_round',4),('max_requests_per_run',6),
                     ('max_total_requests',100),('max_output_tokens',2400),('max_request_bytes',120000),('max_tool_result_bytes',64000)]:
         value=config.get(key,100 if key=='max_total_requests' else None)
@@ -32,13 +31,12 @@ def validate_config(config):
         v=config[key]
         if type(v) not in (int,float) or not math.isfinite(v) or v<=0: raise ValueError(f'{key}: positive finite number')
     if config['budget_cny']>5: raise ValueError('teaching local budget cap: 5 CNY')
-    min_input,min_output=(2.0,8.0) if provider_of(config)=='deepseek' else (0.8,1.6)
-    if config['input_cny_per_million']<min_input or config['output_cny_per_million']<min_output:
-        raise ValueError('configured rates below conservative uncached provider rates')
+    if config['input_cny_per_million']<0.8 or config['output_cny_per_million']<1.6:
+        raise ValueError('configured rates below verified 2026-10-12 uncached Flash rate')
     estimated_max=(config['max_request_bytes']*config['input_cny_per_million']+config['max_output_tokens']*config['output_cny_per_million'])/1000000
     if config['per_request_reserve_cny']<estimated_max: raise ValueError('reservation too small for configured request limits')
     # Byte-based input estimate is deliberately conservative, not a billing guarantee.
-    expiry=deadline_of(config)
+    expiry=datetime.fromisoformat(config['coupon_expires_at'])
     if expiry.tzinfo is None: raise ValueError('coupon expiry requires timezone')
 
 class BudgetLedger:
@@ -51,8 +49,8 @@ class BudgetLedger:
         self.config = config
 
     def reserve(self):
-        if datetime.now().astimezone() >= deadline_of(self.config):
-            raise RuntimeError('配置的请求有效期已结束，程序停止发起付费请求。')
+        if datetime.now().astimezone() >= datetime.fromisoformat(self.config['coupon_expires_at']):
+            raise RuntimeError('券已过有效期，程序停止发起付费请求。')
         self.db.execute('BEGIN IMMEDIATE')
         try:
             used = self.db.execute('SELECT COALESCE(SUM(amount),0) FROM calls').fetchone()[0]
@@ -85,11 +83,14 @@ class Model:
         validate_config(config)
         self.config,self.mock,self.calls = config,mock,0
         self.usage_log = []
-        self.ledger = None if mock or provider_of(config)=='deepseek' else BudgetLedger(BASE/'state'/'budget.sqlite',config)
+        self.ledger = None if mock or config.get('provider')=='deepseek' else BudgetLedger(BASE/'state'/'budget.sqlite',config)
         self.client = httpx.AsyncClient(timeout=httpx.Timeout(90,connect=10),follow_redirects=False)
 
     async def request(self,payload):
-        if provider_of(self.config)!='deepseek' and self.calls >= self.config['max_requests_per_run']:
+        if self.config.get('provider')=='deepseek':
+            payload=dict(payload)
+            payload['max_tokens']=payload.pop('max_completion_tokens',self.config['max_output_tokens'])
+        if self.config.get('provider')!='deepseek' and self.calls >= self.config['max_requests_per_run']:
             raise RuntimeError('模型请求次数达到上限。')
         if len(encode(payload).encode()) > self.config['max_request_bytes']:
             raise RuntimeError('请求正文过大，请缩小问题或工具返回量。')
@@ -107,9 +108,9 @@ class Model:
             evidence = [json.loads(x['content']) for x in payload['messages'] if x['role']=='tool']
             answer = '【离线模型模拟，非云端推理】\n已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。\n'+encode(evidence)
             return {'choices':[{'message':{'role':'assistant','content':answer}}], 'usage':{}}
-        key=os.environ.get(api_key_env(self.config),'').strip()
+        key=api_key(self.config)
         if not key:
-            raise ValueError(api_key_env(self.config)+' is not configured')
+            raise ValueError('请配置模型 API Key。')
         ident = self.ledger.reserve() if self.ledger else None
         self.calls += 1
         try:

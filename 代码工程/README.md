@@ -13,10 +13,10 @@
 python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" --config config.deepseek.example.json --output evidence/deepseek.json
 ```
 
-本人 DeepSeek API Key 可填写在云机 `host.py` 顶部的 `DEEPSEEK_API_KEY`，或设置同名环境变量。
+本人 DeepSeek API Key 可填写在云机 `model_gateway.py` 顶部的 `DEEPSEEK_API_KEY`，或设置同名环境变量。
 填写到源码后，上传或提交代码前须清空。Host 经 stdio MCP 执行工具，再以 `role=tool` 回传结果。
-`evidence/deepseek.json` 保存工具模式、模型响应、工具参数和结果、消息及最终回答。
-终端显示最终答案，MCP 日志写入 `evidence/deepseek.server.log`。
+`evidence/deepseek.json` 沿用课程原版记录格式，保存工具调用 trace、最终回答和用量。
+终端显示简短答案，不打印 MCP 过程日志，也不额外生成 Server 日志文件。
 基础通信检查逐条执行下方命令，自然语言提问不重复执行基础自检。
 尚未用真实密钥运行时，不应把离线模拟结果作为自然语言验收通过证据。
 

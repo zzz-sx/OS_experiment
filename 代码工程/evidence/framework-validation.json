@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-03T07:33:26.564976+00:00",
+  "started_at": "2026-11-03T08:25:03.093509+00:00",
   "stage": "framework",
   "advanced": false,
   "scope": "openEuler_target",
@@ -17,11 +17,11 @@
   "source_sha256": {
     "configure_lab.py": "2ccdfb288b3669a49da21637926f87ead86a97c2a92419bb442d3c8fee12e37c",
     "server.py": "5faf5cf7f6f1dbff1a131323f8761c97a071baf0a93316714270516310a03597",
-    "host.py": "3f9da534fb197b76b81bca0f9dc7534be64a19fd49ba8ae6b64ef8c84e7b2933",
+    "host.py": "63f39ca2e62f703d82f9e9ab3c77471bab0547f004ba9999d1153a6563647192",
     "target-validation.py": "bedc6a8020320120da5ba0373ba73c9f5dda464cfc5e3f29afde558ba9ad93fa",
     "controlled_runner.py": "e7442192593c44a12afd78f68ba9cf522ce1a05e5bec76bdcea546834ef640c6",
     "web_ui.py": "35fdf302b2f8f71134efa1f2f912097eb78d0e2931b1804dc5e2a0ea54393d54",
-    "model_gateway.py": "9732bddad87b38e6ea9b6501eb771c48f555301549c24a3a7d6eee19e6b2990b",
+    "model_gateway.py": "fd54c0274eaebdb275e65fb9b2ed6e6cbe9d1fb4208c43c316a25ad213186107",
     "prepare_lab.py": "962e5e9c44bc8322fae479390a4a43b2a5f787bd037b1c9905f2f5f7c48520f4",
     "presentation_helpers.py": "5d5b1a1be5749aa3c7e6161b60ee5ed438ad14d2d83189b9c428d9e6ad310631",
     "process_server.py": "ce2bb57d7fc7a73140c4250c7fd6b3cf54d0580396746e95263de3f4305f4601",
@@ -76,7 +76,7 @@
       "result": {
         "ok": true,
         "kind": "status",
-        "sampled_at": "2026-11-03T07:33:27.031710+00:00",
+        "sampled_at": "2026-11-03T08:25:03.534848+00:00",
         "platform": "Linux",
         "source": "Python datetime",
         "units": {},
@@ -94,7 +94,7 @@
       "result": {
         "ok": true,
         "kind": "observation",
-        "sampled_at": "2026-11-03T07:33:27.033159+00:00",
+        "sampled_at": "2026-11-03T08:25:03.536241+00:00",
         "platform": "Linux",
         "source": "psutil.virtual_memory / swap_memory",
         "units": {
@@ -102,11 +102,11 @@
           "percent": "percent"
         },
         "data": {
-          "total": 3570696192,
-          "available": 2743115776,
-          "used": 827580416,
-          "free": 1285894144,
-          "percent": 23.2,
+          "total": 3570704384,
+          "available": 2769223680,
+          "used": 801480704,
+          "free": 2397220864,
+          "percent": 22.4,
           "swap": {
             "total": 0,
             "used": 0,
@@ -152,5 +152,5 @@
   },
   "success": true,
   "status": "passed",
-  "finished_at": "2026-11-03T07:33:28.533526+00:00"
+  "finished_at": "2026-11-03T08:25:04.968429+00:00"
 }

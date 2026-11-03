@@ -31,7 +31,7 @@ python mcp_check.py get_time
 python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" --config config.deepseek.example.json --output evidence/deepseek.json
 ```
 
-运行真实模型前，在当前终端设置 `DEEPSEEK_API_KEY`。仓库中的密钥位置留空。
+运行真实模型前，在当前终端设置 `DEEPSEEK_API_KEY`，或在云机私有副本的 `model_gateway.py` 顶部填写同名常量。仓库中的密钥位置留空。
 Python 固定 3.11.16，依赖见工程内 `requirements-lock.txt`，环境安装步骤见 `bootstrap_env.sh`。
 
 ## 备份范围
