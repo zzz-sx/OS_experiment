@@ -21,7 +21,19 @@ python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" 
 尚未用真实密钥运行时，不应把离线模拟结果作为自然语言验收通过证据。
 
 DeepSeek 配置在 `config.deepseek.example.json`，使用官方 `deepseek-flash` 非思考模式。
-DeepSeek 不设本地累计提问次数、费用上限或调用有效期；实际费用由 DeepSeek 平台计费。
+DeepSeek 与原版共用配置校验和 `BudgetLedger`：配置本地预算、请求预留、费率和有效期，
+账本保存在 `state/budget-deepseek.sqlite`，与华为云的 `state/budget.sqlite` 分开。
+DeepSeek 配置不写 `max_total_requests`，因此不限制累计请求次数，也没有默认6次或100次限制。
+`max_requests_per_run=4` 只限制一次运行中的模型请求数；`budget_cny=1.0` 是本地累计预算。
+默认按高峰缓存未命中的输入2元/百万token、输出8元/百万token保守估算，实际以平台账单为准。
+为沿用课程结构保留 `coupon_expires_at` 字段；对 DeepSeek 它表示自设的本地停止请求时间，不表示平台赠券期限。
+预算、有效期等数值可在 `config.deepseek.example.json` 修改。停止 Host 后如需重置本地统计，可执行：
+
+```bash
+mv state/budget-deepseek.sqlite state/budget-deepseek-$(date +%Y%m%d-%H%M%S).sqlite
+```
+
+该命令备份旧账本，下次运行会新建账本；不会退还平台费用或改变平台余额。
 官方协议与费率核对于 2026-11-01：
 https://api-docs.deepseek.com/guides/tool_calls/ 、
 https://api-docs.deepseek.com/zh-cn/quick_start/pricing/ 。

@@ -15,7 +15,7 @@
       "result": {
         "ok": true,
         "kind": "observation",
-        "sampled_at": "2026-11-03T08:25:05.808585+00:00",
+        "sampled_at": "2026-11-03T08:50:08.473110+00:00",
         "platform": "Linux",
         "source": "psutil.virtual_memory / swap_memory",
         "units": {
@@ -24,10 +24,10 @@
         },
         "data": {
           "total": 3570704384,
-          "available": 2761449472,
-          "used": 809254912,
-          "free": 2389372928,
-          "percent": 22.7,
+          "available": 2739605504,
+          "used": 831098880,
+          "free": 2362212352,
+          "percent": 23.3,
           "swap": {
             "total": 0,
             "used": 0,
@@ -52,7 +52,7 @@
       "result": {
         "ok": true,
         "kind": "status",
-        "sampled_at": "2026-11-03T08:25:05.809931+00:00",
+        "sampled_at": "2026-11-03T08:50:08.474573+00:00",
         "platform": "Linux",
         "source": "Python datetime",
         "units": {},
@@ -64,11 +64,11 @@
       }
     }
   ],
-  "answer": "【离线模型模拟，非云端推理】\n已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。\n[{\"ok\":true,\"kind\":\"observation\",\"sampled_at\":\"2026-11-03T08:25:05.808585+00:00\",\"platform\":\"Linux\",\"source\":\"psutil.virtual_memory / swap_memory\",\"units\":{\"memory\":\"bytes\",\"percent\":\"percent\"},\"data\":{\"total\":3570704384,\"available\":2761449472,\"used\":809254912,\"free\":2389372928,\"percent\":22.7,\"swap\":{\"total\":0,\"used\":0,\"free\":0,\"percent\":0.0,\"sin\":0,\"sout\":0}},\"error\":null,\"limitations\":[\"available是估计值；一次快照不足以证明抖动。\",\"swap.total=0表示未配置可用交换区，不能据此断言无缺页。\"]},{\"ok\":true,\"kind\":\"status\",\"sampled_at\":\"2026-11-03T08:25:05.809931+00:00\",\"platform\":\"Linux\",\"source\":\"Python datetime\",\"units\":{},\"data\":{\"timezone\":\"UTC\"},\"error\":null,\"limitations\":[]}]",
+  "answer": "【离线模型模拟，非云端推理】\n已收到真实MCP工具返回；仅演示协议闭环，请核对每个结果的ok/error。\n[{\"ok\":true,\"kind\":\"observation\",\"sampled_at\":\"2026-11-03T08:50:08.473110+00:00\",\"platform\":\"Linux\",\"source\":\"psutil.virtual_memory / swap_memory\",\"units\":{\"memory\":\"bytes\",\"percent\":\"percent\"},\"data\":{\"total\":3570704384,\"available\":2739605504,\"used\":831098880,\"free\":2362212352,\"percent\":23.3,\"swap\":{\"total\":0,\"used\":0,\"free\":0,\"percent\":0.0,\"sin\":0,\"sout\":0}},\"error\":null,\"limitations\":[\"available是估计值；一次快照不足以证明抖动。\",\"swap.total=0表示未配置可用交换区，不能据此断言无缺页。\"]},{\"ok\":true,\"kind\":\"status\",\"sampled_at\":\"2026-11-03T08:50:08.474573+00:00\",\"platform\":\"Linux\",\"source\":\"Python datetime\",\"units\":{},\"data\":{\"timezone\":\"UTC\"},\"error\":null,\"limitations\":[]}]",
   "model_usage": [],
   "evidence_display": {
     "mode": "provided_json_fallback",
-    "text": "[{\"round\": 1, \"tool_call_id\": \"demo_mem\", \"tool\": \"get_memory_info\", \"arguments\": \"{}\", \"result\": {\"ok\": true, \"kind\": \"observation\", \"sampled_at\": \"2026-11-03T08:25:05.808585+00:00\", \"platform\": \"Linux\", \"source\": \"psutil.virtual_memory / swap_memory\", \"units\": {\"memory\": \"bytes\", \"percent\": \"percent\"}, \"data\": {\"total\": 3570704384, \"available\": 2761449472, \"used\": 809254912, \"free\": 2389372928, \"percent\": 22.7, \"swap\": {\"total\": 0, \"used\": 0, \"free\": 0, \"percent\": 0.0, \"sin\": 0, \"sout\": 0}}, \"error\": null, \"limitations\": [\"available是估计值；一次快照不足以证明抖动。\", \"swap.total=0表示未配置可用交换区，不能据此断言无缺页。\"]}}, {\"round\": 1, \"tool_call_id\": \"demo_time\", \"tool\": \"get_time\", \"arguments\": \"{}\", \"result\": {\"ok\": true, \"kind\": \"status\", \"sampled_at\": \"2026-11-03T08:25:05.809931+00:00\", \"platform\": \"Linux\", \"source\": \"Python datetime\", \"units\": {}, \"data\": {\"timezone\": \"UTC\"}, \"error\": null, \"limitations\": []}}]",
+    "text": "[{\"round\": 1, \"tool_call_id\": \"demo_mem\", \"tool\": \"get_memory_info\", \"arguments\": \"{}\", \"result\": {\"ok\": true, \"kind\": \"observation\", \"sampled_at\": \"2026-11-03T08:50:08.473110+00:00\", \"platform\": \"Linux\", \"source\": \"psutil.virtual_memory / swap_memory\", \"units\": {\"memory\": \"bytes\", \"percent\": \"percent\"}, \"data\": {\"total\": 3570704384, \"available\": 2739605504, \"used\": 831098880, \"free\": 2362212352, \"percent\": 23.3, \"swap\": {\"total\": 0, \"used\": 0, \"free\": 0, \"percent\": 0.0, \"sin\": 0, \"sout\": 0}}, \"error\": null, \"limitations\": [\"available是估计值；一次快照不足以证明抖动。\", \"swap.total=0表示未配置可用交换区，不能据此断言无缺页。\"]}}, {\"round\": 1, \"tool_call_id\": \"demo_time\", \"tool\": \"get_time\", \"arguments\": \"{}\", \"result\": {\"ok\": true, \"kind\": \"status\", \"sampled_at\": \"2026-11-03T08:50:08.474573+00:00\", \"platform\": \"Linux\", \"source\": \"Python datetime\", \"units\": {}, \"data\": {\"timezone\": \"UTC\"}, \"error\": null, \"limitations\": []}}]",
     "optional_task_pending": true,
     "message": "TODO N1：请完成 students/interaction_helpers.py:summarize_evidence，当前未执行该功能。"
   }
