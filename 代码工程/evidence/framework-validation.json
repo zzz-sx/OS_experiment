@@ -1,5 +1,5 @@
 {
-  "started_at": "2026-11-02T11:54:08.124957+00:00",
+  "started_at": "2026-11-03T07:33:26.564976+00:00",
   "stage": "framework",
   "advanced": false,
   "scope": "openEuler_target",
@@ -16,9 +16,8 @@
   },
   "source_sha256": {
     "configure_lab.py": "2ccdfb288b3669a49da21637926f87ead86a97c2a92419bb442d3c8fee12e37c",
-    "week8_natural_language.py": "15282b855ac2b8f83e193e552d83f5ffad383f2b24e13848e93f5e2e9c2691e4",
     "server.py": "5faf5cf7f6f1dbff1a131323f8761c97a071baf0a93316714270516310a03597",
-    "host.py": "dd96a85e60771dcd366dca2c3f8a7c9f6942cb766a8b3dc5be793b6a196c0078",
+    "host.py": "3f9da534fb197b76b81bca0f9dc7534be64a19fd49ba8ae6b64ef8c84e7b2933",
     "target-validation.py": "bedc6a8020320120da5ba0373ba73c9f5dda464cfc5e3f29afde558ba9ad93fa",
     "controlled_runner.py": "e7442192593c44a12afd78f68ba9cf522ce1a05e5bec76bdcea546834ef640c6",
     "web_ui.py": "35fdf302b2f8f71134efa1f2f912097eb78d0e2931b1804dc5e2a0ea54393d54",
@@ -38,7 +37,6 @@
     "validate_lab.py": "b8f4ee0ac001eeef8aad29857be9536d14a2a807848b5f77e69b9f0a199036ab",
     "prepare_fixtures.py": "b37a310ad190c70cd96c75dfceebe212c40a29f4030f821ebd162e31aaf65cfa",
     "lab_common.py": "410af88120fd565c8aa65477dd7fdfc0d0e18cc8d529c2bc44c85cf5f1a80110",
-    "test_deepseek.py": "e0c7f8d1f9b96150cab6ba55cdf12ba40216782d3ea382653a60ba831d9b3671",
     "test_student_acceptance.py": "4618d5eb466d6ef8868d9717b56a0ee6d7a6561aaf948c777b3b1d84d95fa969",
     "mcp_check.py": "da3260c0a908379e2fb51f2999dec50c758fa3d37dc7d805c409253fa2d33d9a",
     "preflight.py": "e9d0e19e59bfa5ef1a8dab0004a370978c4c23e8132ad3485d2c7645f8d69e5c",
@@ -78,7 +76,7 @@
       "result": {
         "ok": true,
         "kind": "status",
-        "sampled_at": "2026-11-02T11:54:08.598774+00:00",
+        "sampled_at": "2026-11-03T07:33:27.031710+00:00",
         "platform": "Linux",
         "source": "Python datetime",
         "units": {},
@@ -96,7 +94,7 @@
       "result": {
         "ok": true,
         "kind": "observation",
-        "sampled_at": "2026-11-02T11:54:08.600564+00:00",
+        "sampled_at": "2026-11-03T07:33:27.033159+00:00",
         "platform": "Linux",
         "source": "psutil.virtual_memory / swap_memory",
         "units": {
@@ -105,10 +103,10 @@
         },
         "data": {
           "total": 3570696192,
-          "available": 2680180736,
-          "used": 890515456,
-          "free": 1972019200,
-          "percent": 24.9,
+          "available": 2743115776,
+          "used": 827580416,
+          "free": 1285894144,
+          "percent": 23.2,
           "swap": {
             "total": 0,
             "used": 0,
@@ -154,5 +152,5 @@
   },
   "success": true,
   "status": "passed",
-  "finished_at": "2026-11-02T11:54:10.181657+00:00"
+  "finished_at": "2026-11-03T07:33:28.533526+00:00"
 }

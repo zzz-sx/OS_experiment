@@ -2,6 +2,10 @@
 
 ## 第八周通信验收（openEuler 云机）
 
+2026-11-03 已清理历史残余。`evidence/` 当前只保留 `tools-list.json`、`get-time.json`、
+`reject-path.json`、`framework-validation.json`、`framework-tests.log`、`mock.json`、`deepseek.json`。
+`lab-data` 可生成样本不提交；后续需要时运行 `python prepare_lab.py` 重新生成。
+
 教师补充要求自然语言接入：下面的通信检查只是基础部分，另须运行真实模型 Host。
 在远程 VS Code 终端直接执行：
 
