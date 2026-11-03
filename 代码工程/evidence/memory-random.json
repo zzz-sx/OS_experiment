@@ -1,0 +1,13 @@
+{
+  "meta": null,
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"ok\": true,\n  \"kind\": \"simulation\",\n  \"sampled_at\": \"2026-11-03T13:40:32.438747+00:00\",\n  \"platform\": \"Linux\",\n  \"source\": \"students.algorithms.page_replace\",\n  \"units\": {\n    \"fault_rate\": \"fraction\",\n    \"faults\": \"count\"\n  },\n  \"data\": {\n    \"algorithm\": \"RANDOM\",\n    \"selected_algorithm\": \"RANDOM\",\n    \"seed\": 42,\n    \"frame_count\": 3,\n    \"faults\": 5,\n    \"fault_rate\": 0.7142857142857143,\n    \"log\": [\n      {\n        \"step\": 1,\n        \"page\": 0,\n        \"hit\": false,\n        \"evicted\": null,\n        \"frames\": [\n          0,\n          null,\n          null\n        ]\n      },\n      {\n        \"step\": 2,\n        \"page\": 1,\n        \"hit\": false,\n        \"evicted\": null,\n        \"frames\": [\n          0,\n          1,\n          null\n        ]\n      },\n      {\n        \"step\": 3,\n        \"page\": 2,\n        \"hit\": false,\n        \"evicted\": null,\n        \"frames\": [\n          0,\n          1,\n          2\n        ]\n      },\n      {\n        \"step\": 4,\n        \"page\": 0,\n        \"hit\": true,\n        \"evicted\": null,\n        \"frames\": [\n          0,\n          1,\n          2\n        ]\n      },\n      {\n        \"step\": 5,\n        \"page\": 3,\n        \"hit\": false,\n        \"evicted\": 2,\n        \"frames\": [\n          0,\n          1,\n          3\n        ]\n      },\n      {\n        \"step\": 6,\n        \"page\": 0,\n        \"hit\": true,\n        \"evicted\": null,\n        \"frames\": [\n          0,\n          1,\n          3\n        ]\n      },\n      {\n        \"step\": 7,\n        \"page\": 4,\n        \"hit\": false,\n        \"evicted\": 0,\n        \"frames\": [\n          4,\n          1,\n          3\n        ]\n      }\n    ],\n    \"assumptions\": [\n      \"空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。\",\n      \"局部Random(seed)仅在满框缺页时均匀选择槽，不改变全局随机状态；不保证优于其他策略。\"\n    ]\n  },\n  \"error\": null,\n  \"limitations\": []\n}",
+      "annotations": null,
+      "meta": null
+    }
+  ],
+  "structuredContent": null,
+  "isError": false
+}

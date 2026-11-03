@@ -1,5 +1,6 @@
-"""学生算法实现区：只提供契约、输入样例和约束，不含完整算法答案。"""
+"""学生算法实现区：页面置换已实现，调度及磁盘分配仍待完成。"""
 from lab_common import integer,StudentTaskPending
+import random
 
 REFERENCE=[7,0,1,2,0,3,0,4,2,3,0,3,2]
 JOBS=[dict(id='A',arrival=0,burst=5),dict(id='B',arrival=1,burst=3),dict(id='C',arrival=2,burst=1)]
@@ -7,7 +8,7 @@ DISK_OPS=[('create','A',8),('create','B',5),('create','C',6),('delete','B',0),('
 
 
 def page_replace(pages,frames=3,algorithm='FIFO',seed=42) -> dict:
-    """【TODO A1】页面置换教学模拟，纯函数，不读真实内存、不改内核。
+    """【A1】页面置换教学模拟，纯函数，不读真实内存、不改内核。
 
     基础FIFO/LRU/CLOCK/OPT；进阶RANDOM/SECOND_CHANCE/HYBRID按课程要求实现。
     若暂未实现某策略，必须继续抛StudentTaskPending，勿假借其他算法的结果。
@@ -21,8 +22,43 @@ def page_replace(pages,frames=3,algorithm='FIFO',seed=42) -> dict:
     提示：先手算短序列并保存逐步状态，再写策略；不要只返回一个缺页总数。
     """
     integer(frames,1,16,'frames');integer(seed,0,2**32-1,'seed')
-    # TODO：输入校验、策略状态与每次引用的轨迹。可分阶段完成各算法。
-    raise StudentTaskPending('A1','students/algorithms.py:page_replace')
+    if not isinstance(pages,list) or not 1<=len(pages)<=128:raise ValueError('pages: list of 1..128 integers')
+    for page in pages:integer(page,0,4095,'page')
+    if algorithm in ('SECOND_CHANCE','HYBRID'):
+        raise StudentTaskPending('A1','students/algorithms.py:page_replace')
+    if algorithm not in ('FIFO','LRU','CLOCK','OPT','RANDOM'):raise ValueError('unknown page replacement algorithm')
+    state=[None]*frames;last_used=[-1]*frames;bits=[0]*frames
+    hand=fifo_hand=faults=0;log=[];rng=random.Random(seed)
+    for index,page in enumerate(pages):
+        hit=page in state;evicted=None;cleared=[]
+        if hit:slot=state.index(page)
+        else:
+            faults+=1
+            if None in state:slot=state.index(None)
+            elif algorithm=='FIFO':
+                slot=fifo_hand;fifo_hand=(fifo_hand+1)%frames
+            elif algorithm=='LRU':slot=min(range(frames),key=lambda n:last_used[n])
+            elif algorithm=='OPT':
+                def next_use(n):
+                    return next((j for j in range(index+1,len(pages)) if pages[j]==state[n]),len(pages))
+                slot=max(range(frames),key=next_use)
+            elif algorithm=='RANDOM':slot=rng.randrange(frames)
+            else:
+                while bits[hand]:
+                    bits[hand]=0;cleared.append(hand);hand=(hand+1)%frames
+                slot=hand
+            evicted=state[slot];state[slot]=page
+            if algorithm=='CLOCK':hand=(slot+1)%frames
+        last_used[slot]=index
+        if algorithm=='CLOCK':bits[slot]=1
+        row=dict(step=index+1,page=page,hit=hit,evicted=evicted,frames=state.copy())
+        if algorithm=='CLOCK':row.update(reference_bits=bits.copy(),hand=hand,cleared_slots=cleared)
+        log.append(row)
+    assumptions=['空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。']
+    if algorithm=='OPT':assumptions.append('OPT预知全部未来引用，只作离线比较下界，不能在线实现。')
+    if algorithm=='RANDOM':assumptions.append('局部Random(seed)仅在满框缺页时均匀选择槽，不改变全局随机状态；不保证优于其他策略。')
+    return dict(algorithm=algorithm,selected_algorithm=algorithm,seed=seed,frame_count=frames,
+                faults=faults,fault_rate=faults/len(pages),log=log,assumptions=assumptions)
 
 
 def scheduler(jobs,algorithm='RR',quantum=2,boost_interval=20) -> dict:

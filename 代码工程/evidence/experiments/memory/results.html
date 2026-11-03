@@ -1,0 +1,1589 @@
+<!doctype html><meta charset="utf-8"><title>个人实验对照</title><style>body{font:17px system-ui;max-width:1000px;margin:2rem auto}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#eef4f4;padding:1rem}</style><h1>个人实验对照</h1><p>NOT_IMPLEMENTED表示待实现，无成功数值或图表。模拟与受控观测分开保存。</p><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 2,
+    &quot;algorithm&quot;: &quot;FIFO&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;FIFO&quot;,
+    &quot;selected_algorithm&quot;: &quot;FIFO&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 2,
+    &quot;faults&quot;: 11,
+    &quot;fault_rate&quot;: 0.8461538461538461,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          1,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          1,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          0,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          4,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          4,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          2,
+          0
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 2,
+    &quot;algorithm&quot;: &quot;LRU&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;LRU&quot;,
+    &quot;selected_algorithm&quot;: &quot;LRU&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 2,
+    &quot;faults&quot;: 11,
+    &quot;fault_rate&quot;: 0.8461538461538461,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          1,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          1,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          0,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          0,
+          4
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          2,
+          4
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          2,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          2,
+          3
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 2,
+    &quot;algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;selected_algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 2,
+    &quot;faults&quot;: 11,
+    &quot;fault_rate&quot;: 0.8461538461538461,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          1,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          1,
+          2
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          0,
+          2
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          0,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          4,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          4,
+          2
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          3,
+          2
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          3,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          2,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 2,
+    &quot;algorithm&quot;: &quot;OPT&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;OPT&quot;,
+    &quot;selected_algorithm&quot;: &quot;OPT&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 2,
+    &quot;faults&quot;: 9,
+    &quot;fault_rate&quot;: 0.6923076923076923,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          1,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          2,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          3,
+          4
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          2,
+          0
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;,
+      &quot;OPT预知全部未来引用，只作离线比较下界，不能在线实现。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 3,
+    &quot;algorithm&quot;: &quot;FIFO&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;FIFO&quot;,
+    &quot;selected_algorithm&quot;: &quot;FIFO&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 3,
+    &quot;faults&quot;: 10,
+    &quot;fault_rate&quot;: 0.7692307692307693,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          2,
+          3,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          2,
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          4,
+          3,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          4,
+          2,
+          0
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          4,
+          2,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          2,
+          3
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 3,
+    &quot;algorithm&quot;: &quot;LRU&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;LRU&quot;,
+    &quot;selected_algorithm&quot;: &quot;LRU&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 3,
+    &quot;faults&quot;: 9,
+    &quot;fault_rate&quot;: 0.6923076923076923,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          4,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          4,
+          0,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          4,
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          0,
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          0,
+          3,
+          2
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 3,
+    &quot;algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;selected_algorithm&quot;: &quot;CLOCK&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 3,
+    &quot;faults&quot;: 9,
+    &quot;fault_rate&quot;: 0.6923076923076923,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null,
+          null
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          null
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          0
+        ],
+        &quot;hand&quot;: 2,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          1
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: [
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 2,
+        &quot;frames&quot;: [
+          4,
+          0,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0,
+          0
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: [
+          0,
+          1,
+          2
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          4,
+          2,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          0
+        ],
+        &quot;hand&quot;: 2,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          4,
+          2,
+          3
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hand&quot;: 2,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 3,
+        &quot;frames&quot;: [
+          4,
+          2,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          0,
+          0,
+          1
+        ],
+        &quot;hand&quot;: 0,
+        &quot;cleared_slots&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          3,
+          2,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          0,
+          1
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: []
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          3,
+          2,
+          0
+        ],
+        &quot;reference_bits&quot;: [
+          1,
+          1,
+          1
+        ],
+        &quot;hand&quot;: 1,
+        &quot;cleared_slots&quot;: []
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;
+    ]
+  }
+}</pre><h2>page_replacement COMPLETED</h2><pre>{
+  &quot;experiment&quot;: &quot;page_replacement&quot;,
+  &quot;parameters&quot;: {
+    &quot;frames&quot;: 3,
+    &quot;algorithm&quot;: &quot;OPT&quot;,
+    &quot;pages&quot;: [
+      7,
+      0,
+      1,
+      2,
+      0,
+      3,
+      0,
+      4,
+      2,
+      3,
+      0,
+      3,
+      2
+    ],
+    &quot;seed&quot;: 42
+  },
+  &quot;kind&quot;: &quot;simulation&quot;,
+  &quot;status&quot;: &quot;COMPLETED&quot;,
+  &quot;data&quot;: {
+    &quot;algorithm&quot;: &quot;OPT&quot;,
+    &quot;selected_algorithm&quot;: &quot;OPT&quot;,
+    &quot;seed&quot;: 42,
+    &quot;frame_count&quot;: 3,
+    &quot;faults&quot;: 7,
+    &quot;fault_rate&quot;: 0.5384615384615384,
+    &quot;log&quot;: [
+      {
+        &quot;step&quot;: 1,
+        &quot;page&quot;: 7,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          null,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 2,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          null
+        ]
+      },
+      {
+        &quot;step&quot;: 3,
+        &quot;page&quot;: 1,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          7,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 4,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 7,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 5,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          1
+        ]
+      },
+      {
+        &quot;step&quot;: 6,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 1,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 7,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 8,
+        &quot;page&quot;: 4,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 0,
+        &quot;frames&quot;: [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 9,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 10,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          4,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 11,
+        &quot;page&quot;: 0,
+        &quot;hit&quot;: false,
+        &quot;evicted&quot;: 4,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 12,
+        &quot;page&quot;: 3,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      },
+      {
+        &quot;step&quot;: 13,
+        &quot;page&quot;: 2,
+        &quot;hit&quot;: true,
+        &quot;evicted&quot;: null,
+        &quot;frames&quot;: [
+          2,
+          0,
+          3
+        ]
+      }
+    ],
+    &quot;assumptions&quot;: [
+      &quot;空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。&quot;,
+      &quot;OPT预知全部未来引用，只作离线比较下界，不能在线实现。&quot;
+    ]
+  }
+}</pre>

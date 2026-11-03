@@ -1,0 +1,750 @@
+{
+  "started_at": "2026-11-03T13:40:30.998738+00:00",
+  "stage": "memory",
+  "advanced": false,
+  "scope": "openEuler_target",
+  "platform": "Linux-6.6.0-112.0.0.104.oe2403.x86_64-x86_64-with-glibc2.38",
+  "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+  "os_release": "NAME=\"openEuler\"\nVERSION=\"24.03 (LTS)\"\nID=\"openEuler\"\nVERSION_ID=\"24.03\"\nPRETTY_NAME=\"openEuler 24.03 (LTS)\"\nANSI_COLOR=\"0;31\"\n\n",
+  "cloud_model_called": false,
+  "dependencies": {
+    "mcp": "1.30.0",
+    "psutil": "7.2.2",
+    "httpx": "0.28.1",
+    "pydantic": "2.13.5",
+    "jsonschema": "4.26.0"
+  },
+  "source_sha256": {
+    "configure_lab.py": "2ccdfb288b3669a49da21637926f87ead86a97c2a92419bb442d3c8fee12e37c",
+    "server.py": "5faf5cf7f6f1dbff1a131323f8761c97a071baf0a93316714270516310a03597",
+    "host.py": "c2da10002560473db39ad7dcfdf3f4be68bef41b9bafc8b0067c1a6e069f0de3",
+    "target-validation.py": "bedc6a8020320120da5ba0373ba73c9f5dda464cfc5e3f29afde558ba9ad93fa",
+    "controlled_runner.py": "e7442192593c44a12afd78f68ba9cf522ce1a05e5bec76bdcea546834ef640c6",
+    "web_ui.py": "35fdf302b2f8f71134efa1f2f912097eb78d0e2931b1804dc5e2a0ea54393d54",
+    "model_gateway.py": "93d8946ef7e2c0bb97324efafd56582b465840174a8a58d5f20230c577d44539",
+    "prepare_lab.py": "962e5e9c44bc8322fae479390a4a43b2a5f787bd037b1c9905f2f5f7c48520f4",
+    "presentation_helpers.py": "5d5b1a1be5749aa3c7e6161b60ee5ed438ad14d2d83189b9c428d9e6ad310631",
+    "process_server.py": "ce2bb57d7fc7a73140c4250c7fd6b3cf54d0580396746e95263de3f4305f4601",
+    "mcp_bridge.py": "3fc0f6974f62add063491d7f104372ba5b6bf4e9e9381701f69f51610767934e",
+    "api_probe.py": "507e3a5b9d0c70e91a3e4b47f7bcc486669e875cab465f7070ae8ea3128e427b",
+    "experiments.py": "4a6fad9722ef10f18551a08a15e1ba95f1fd475df7a03cee98dcaf7faa00f6ac",
+    "algorithms.py": "3f6321cb7512c5e7ef8d87516d4bf0f0bb4d4e9f1e7209a2d7797a3e02a0f935",
+    "os_tools.py": "72ec7ec1c286446f2bfaad1082153af7710fc1a2ce94814fb07bbcad1cb2ea32",
+    "assessment.py": "74df76b36791ad21027a19aae19fe051d0a8562cbc11df5fb2a3607ea4becd48",
+    "test_framework.py": "278073f564ae5b8d85bac3822a6ae73d68d36ac79e4ab7daff43a0c0aad4ce84",
+    "test_student_custom.py": "4706e40d2fcd73ff1451bc421e4faf41ba91279040cd812ccb8dd1c3d3b45b79",
+    "test_setup.py": "13ebb502ac48b85a05757aa6d9e528338bc9c3dcac8c5b90ce029a56f74d5c9a",
+    "validate_lab.py": "b8f4ee0ac001eeef8aad29857be9536d14a2a807848b5f77e69b9f0a199036ab",
+    "prepare_fixtures.py": "b37a310ad190c70cd96c75dfceebe212c40a29f4030f821ebd162e31aaf65cfa",
+    "lab_common.py": "410af88120fd565c8aa65477dd7fdfc0d0e18cc8d529c2bc44c85cf5f1a80110",
+    "test_student_acceptance.py": "4618d5eb466d6ef8868d9717b56a0ee6d7a6561aaf948c777b3b1d84d95fa969",
+    "mcp_check.py": "da3260c0a908379e2fb51f2999dec50c758fa3d37dc7d805c409253fa2d33d9a",
+    "preflight.py": "e9d0e19e59bfa5ef1a8dab0004a370978c4c23e8132ad3485d2c7645f8d69e5c",
+    "filesystem_server.py": "96bd53b2d824ea9fca3992c948cb47acc95c819ccbc19542980087b6e7b987ca",
+    "memory_server.py": "95dfea97cdf76c41dfc5826ce66ee261c3db7c7c0d774027e3775c6aa7dc68d5",
+    "workload.py": "f6d8bceac4fd18cc9b1804b292352a0186d09ec6f9ab846d3efacd5852d8fcc8",
+    "students/process.py": "251e8c40c8df31234c64a685e2b64fae9f7536d643fde7e87818532b13e43acf",
+    "students/interaction_helpers.py": "78b446ae76614d676c287adf08c98c4a94abfa3a4dafe819b05931cd92601cfd",
+    "students/__init__.py": "d6c3dd20dfc55b3fd724a16eac8a1765d5bd168e8e5c6ca31f8b7dc774d4f949",
+    "students/algorithms.py": "79330566f9fd93a6908095dec05a53a17545dc9d52bc62f21c0cf1b64bcc0015",
+    "students/filesystem.py": "b671a333299910a4d9e889d49979f330ac0d6f32aef968ef7b3ef21a9e921665",
+    "students/memory.py": "21ff03caf11896cec26d5d30064e35db948cc8d61b702e8a9ed43766b2952d94"
+  },
+  "tools": [
+    "get_time",
+    "get_memory_info",
+    "list_top_processes",
+    "get_process_memory",
+    "analyze_memory_patterns",
+    "simulate_page_fault",
+    "get_filesystem_info",
+    "analyze_file_distribution",
+    "trace_file_access",
+    "simulate_disk_allocation",
+    "get_process_tree",
+    "monitor_context_switches",
+    "simulate_scheduler",
+    "analyze_scheduling",
+    "sample_process_memory",
+    "get_process_schedstat"
+  ],
+  "calls": [
+    {
+      "tool": "get_memory_info",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-03T13:40:31.418326+00:00",
+        "platform": "Linux",
+        "source": "psutil.virtual_memory / swap_memory",
+        "units": {
+          "memory": "bytes",
+          "percent": "percent"
+        },
+        "data": {
+          "total": 3570704384,
+          "available": 3003326464,
+          "used": 567377920,
+          "free": 2801840128,
+          "percent": 15.9,
+          "swap": {
+            "total": 0,
+            "used": 0,
+            "free": 0,
+            "percent": 0.0,
+            "sin": 0,
+            "sout": 0
+          }
+        },
+        "error": null,
+        "limitations": [
+          "available是估计值；一次快照不足以证明抖动。",
+          "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+        ]
+      }
+    },
+    {
+      "tool": "list_top_processes",
+      "arguments": {
+        "limit": 3
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-03T13:40:31.423171+00:00",
+        "platform": "Linux",
+        "source": "psutil.process_iter / Process.memory_info",
+        "units": {
+          "rss": "bytes"
+        },
+        "data": {
+          "processes": [
+            {
+              "pid": 4141,
+              "ppid": 4139,
+              "name": "python",
+              "rss": 66109440
+            },
+            {
+              "pid": 4139,
+              "ppid": 4020,
+              "name": "python",
+              "rss": 65290240
+            },
+            {
+              "pid": 4020,
+              "ppid": 4019,
+              "name": "bash",
+              "rss": 11513856
+            }
+          ],
+          "excluded": 105
+        },
+        "error": null,
+        "limitations": [
+          "仅当前真实UID；excluded含其他UID及读取失败的进程；动态快照不是原子操作。",
+          "RSS可能重复计入共享页，不能相加当作独占物理内存。"
+        ]
+      }
+    },
+    {
+      "tool": "get_process_memory",
+      "arguments": {
+        "pid": 4139
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-03T13:40:31.426024+00:00",
+        "platform": "Linux",
+        "source": "psutil.Process.memory_info / /proc/PID/smaps",
+        "units": {
+          "memory": "bytes",
+          "maps": "KiB"
+        },
+        "data": {
+          "pid": 4139,
+          "name": "python",
+          "memory": {
+            "rss": 65290240,
+            "vms": 162701312,
+            "shared": 24776704,
+            "text": 10776576,
+            "lib": 0,
+            "data": 49696768,
+            "dirty": 0
+          },
+          "maps": [
+            {
+              "address": "5637a73f5000-5637a75d2000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 1908,
+              "Rss_KiB": 1908,
+              "Pss_KiB": 954,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "5637a75d2000-5637a8019000",
+              "permissions": "r-xp",
+              "label": "python3.11",
+              "Size_KiB": 10524,
+              "Rss_KiB": 6040,
+              "Pss_KiB": 3252,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "5637a8019000-5637a849f000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 4632,
+              "Rss_KiB": 1628,
+              "Pss_KiB": 906,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "5637a849f000-5637a8573000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 848,
+              "Rss_KiB": 748,
+              "Pss_KiB": 748,
+              "Private_Dirty_KiB": 748
+            },
+            {
+              "address": "5637a8573000-5637a86bc000",
+              "permissions": "rw-p",
+              "label": "python3.11",
+              "Size_KiB": 1316,
+              "Rss_KiB": 1316,
+              "Pss_KiB": 1316,
+              "Private_Dirty_KiB": 1316
+            },
+            {
+              "address": "5637a86bc000-5637a8709000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 308,
+              "Rss_KiB": 40,
+              "Pss_KiB": 40,
+              "Private_Dirty_KiB": 40
+            },
+            {
+              "address": "5637aa868000-5637aa876000",
+              "permissions": "rw-p",
+              "label": "python3.11",
+              "Size_KiB": 56,
+              "Rss_KiB": 56,
+              "Pss_KiB": 30,
+              "Private_Dirty_KiB": 4
+            },
+            {
+              "address": "5637b3407000-5637b400a000",
+              "permissions": "rw-p",
+              "label": "[heap]",
+              "Size_KiB": 12300,
+              "Rss_KiB": 11940,
+              "Pss_KiB": 11940,
+              "Private_Dirty_KiB": 11940
+            },
+            {
+              "address": "7fc11c000000-7fc11c021000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 132,
+              "Rss_KiB": 4,
+              "Pss_KiB": 4,
+              "Private_Dirty_KiB": 4
+            },
+            {
+              "address": "7fc11c021000-7fc120000000",
+              "permissions": "---p",
+              "label": "[anonymous]",
+              "Size_KiB": 65404,
+              "Rss_KiB": 0,
+              "Pss_KiB": 0,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "7fc122c65000-7fc122c66000",
+              "permissions": "---p",
+              "label": "[anonymous]",
+              "Size_KiB": 4,
+              "Rss_KiB": 0,
+              "Pss_KiB": 0,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "7fc122c66000-7fc123466000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 8192,
+              "Rss_KiB": 8,
+              "Pss_KiB": 8,
+              "Private_Dirty_KiB": 8
+            }
+          ],
+          "maps_partial": true
+        },
+        "error": null,
+        "limitations": [
+          "RSS包含共享页；映射与RSS不是原子快照，映射单位KiB，memory单位bytes。",
+          "达到映射数量或读取字节上限，maps仅为部分结果。"
+        ]
+      }
+    },
+    {
+      "tool": "sample_process_memory",
+      "arguments": {
+        "pid": 4139,
+        "samples": 2,
+        "interval": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-03T13:40:31.528349+00:00",
+        "platform": "Linux",
+        "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+        "units": {
+          "rss": "bytes",
+          "swap": "bytes",
+          "faults": "count",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "pid": 4139,
+          "samples": [
+            {
+              "sampled_at": "2026-11-03T13:40:31.427690+00:00",
+              "monotonic_seconds": 800.986494305,
+              "rss_bytes": 65290240,
+              "system_swap_in_bytes": 0,
+              "system_swap_out_bytes": 0,
+              "minor_faults": 10576,
+              "major_faults": 0
+            },
+            {
+              "sampled_at": "2026-11-03T13:40:31.528320+00:00",
+              "monotonic_seconds": 801.087132382,
+              "rss_bytes": 65290240,
+              "system_swap_in_bytes": 0,
+              "system_swap_out_bytes": 0,
+              "minor_faults": 10576,
+              "major_faults": 0
+            }
+          ],
+          "delta": {
+            "rss_bytes": 0,
+            "system_swap_in_bytes": 0,
+            "system_swap_out_bytes": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "elapsed_seconds": 0.10063807700009875
+          }
+        },
+        "error": null,
+        "limitations": [
+          "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+          "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+          "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+        ]
+      }
+    },
+    {
+      "tool": "analyze_memory_patterns",
+      "arguments": {
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-03T13:40:31.530183+00:00",
+        "platform": "Linux",
+        "source": "explicit page reference sequence",
+        "units": {
+          "reuse_interval": "references",
+          "adjacent_page_ratio": "fraction"
+        },
+        "data": {
+          "length": 4,
+          "distinct_pages": 3,
+          "repeated_references": 1,
+          "mean_reuse_interval": 2.0,
+          "adjacent_page_ratio": 0.6666666666666666
+        },
+        "error": null,
+        "limitations": [
+          "只描述输入序列的复用及相邻页号代理指标，不能证明真实程序局部性或抖动。"
+        ]
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "FIFO",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-03T13:40:31.531552+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "FIFO",
+          "selected_algorithm": "FIFO",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "LRU",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-03T13:40:31.532712+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "LRU",
+          "selected_algorithm": "LRU",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 1,
+              "frames": [
+                0,
+                2
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "CLOCK",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-03T13:40:31.533884+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "CLOCK",
+          "selected_algorithm": "CLOCK",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ],
+              "reference_bits": [
+                1,
+                0
+              ],
+              "hand": 1,
+              "cleared_slots": []
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ],
+              "reference_bits": [
+                1,
+                1
+              ],
+              "hand": 0,
+              "cleared_slots": []
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ],
+              "reference_bits": [
+                1,
+                1
+              ],
+              "hand": 0,
+              "cleared_slots": []
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ],
+              "reference_bits": [
+                1,
+                0
+              ],
+              "hand": 1,
+              "cleared_slots": [
+                0,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "OPT",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-03T13:40:31.534951+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "OPT",
+          "selected_algorithm": "OPT",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。",
+            "OPT预知全部未来引用，只作离线比较下界，不能在线实现。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    }
+  ],
+  "module_tools": {},
+  "success": true,
+  "status": "passed",
+  "finished_at": "2026-11-03T13:40:31.597483+00:00"
+}
