@@ -9,8 +9,8 @@ def encode(value):
     return json.dumps(value,ensure_ascii=False,separators=(',',':'))
 
 def validate_config(config):
-    if config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions' or config.get('model')!='openpangu-2.0-flash':
-        raise ValueError('endpoint/model must match audited Huawei MaaS V2 Flash configuration')
+    if config.get('endpoint')!='https://api.modelarts-maas.com/v2/chat/completions':
+        raise ValueError('endpoint must match Huawei MaaS V2 chat/completions')
     for key,cap in [('max_rounds',6),('max_tool_calls',24),('max_calls_per_round',4),('max_requests_per_run',6),
                     ('max_total_requests',100),('max_output_tokens',2400),('max_request_bytes',120000),('max_tool_result_bytes',64000)]:
         value=config.get(key,100 if key=='max_total_requests' else None)

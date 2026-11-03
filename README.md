@@ -1,6 +1,6 @@
 # OS_experiment
 
-MCP 与 openEuler 操作系统实验，当前使用课程原版代码和华为云 MaaS 的 `openpangu-2.0-flash`。
+MCP 与 openEuler 操作系统实验，沿用课程框架，通过华为云 MaaS V2 调用模型，默认 `openpangu-2.0-flash`。
 
 ## 当前分支
 
@@ -10,8 +10,8 @@ MCP 与 openEuler 操作系统实验，当前使用课程原版代码和华为�
 
 ## 相比原版
 
-44 个原始工程文件全部保留；Python 源码与原版完全一致。
-唯一工程配置改动是 `代码工程/config.example.json` 的 `max_total_requests` 从6改为100。
+44 个原始工程文件全部保留。源码仅在 `model_gateway.py` 去掉固定模型名称的检查，保留 MaaS V2 地址检查并更新相应报错文字；Host 等其余 Python 文件与原版一致。
+工程配置改动是 `代码工程/config.example.json` 的 `max_total_requests` 从6改为100，默认模型未变。
 原版预算、有效期和次数检查完整保留，未绕过。
 
 ## 使用 MaaS 验收
@@ -31,6 +31,16 @@ python host.py "请查询服务器当前 UTC 时间，并注明数据来源。" 
 成功时 Host 结果文件的 `mode=cloud_llm_real_mcp`、`status=completed`，并包含成功的工具 trace。
 测试会产生模型费用；次数100指 API 请求次数，一次提问通常包含多次请求。
 原版配置还保留1元本地估算预算、单次最多4次模型请求及配置有效期。
+
+## 切换 MaaS 模型
+
+在“西南-贵阳一”的 MaaS 预置服务中开通目标模型，从“API调用”复制其准确 `model` 值，填入 `代码工程/config.example.json`。
+`endpoint` 保持 `https://api.modelarts-maas.com/v2/chat/completions`，继续使用 `MAAS_API_KEY`。
+模型须支持当前请求的工具调用 `auto` 和 `thinking.type=disabled`；取消本地固定模型检查不代表任何 MaaS 模型都适配。
+例如官方文档列出的 `deepseek-v4.1-flash` 支持这两个选项，而 `glm-5.3` 仅支持启用思考，不能直接沿用当前 Host 的关闭思考参数。
+切模型后按 MaaS 控制台费率核对输入/输出单价、预算和请求预留；不同平台或模型不能混用单价。
+依次运行上述 `api_probe.py` 和 `host.py`。前者验证鉴权及基本参数，后者验证真实工具调用。
+官方说明：https://support.huaweicloud.com/model-call-maas/model-call-019.html
 
 ## 已验证与待验证
 
