@@ -6,12 +6,14 @@ MCP 与 openEuler 操作系统实验。基于课程提供的学生框架部署�
 
 | 版本 | 内容 | 查看 |
 | --- | --- | --- |
-| 课程原始版 | 从原始 `openEuler_MCP代码框架.zip` 提取的 44 个工程文件，未修改 | [course-original](https://github.com/zzz-sx/OS_experiment/tree/course-original) |
-| 当前云端备份 | 2026-11-03 读取的云端工程，包含代码、验收证据和样本数据 | [week8-current-20261103](https://github.com/zzz-sx/OS_experiment/tree/week8-current-20261103) |
+| 课程原始版 | 从原始 `openEuler_MCP代码框架.zip` 提取的 44 个工程文件，未修改 | [main](https://github.com/zzz-sx/OS_experiment/tree/main) |
+| 当前待验收版 | 2026-11-03 读取的云端工程，包含代码、验收证据和样本数据 | [week8-deepseek](https://github.com/zzz-sx/OS_experiment/tree/week8-deepseek) |
 
-先提交原始版，再提交当前版，保留仓库最初的提交历史。
+`main` 保留课程原始版，当前改动独立放在 `week8-deepseek`。用户确认验收通过后再合并。
+后续每次改动使用新的分支，验收前不直接写入 `main`。
+`course-original` 和 `week8-current-20261103` 标签保留原始及首次云端快照，便于回溯。
 
-- [原始版与当前版逐行对比](https://github.com/zzz-sx/OS_experiment/compare/course-original...week8-current-20261103)
+- [原始版与待验收分支逐行对比](https://github.com/zzz-sx/OS_experiment/compare/main...week8-deepseek)
 - [修改说明](修改说明.md)
 - [工程源码](代码工程/)
 - [验收证据](代码工程/evidence/)
