@@ -1,0 +1,40 @@
+{
+  "ok": true,
+  "kind": "observation",
+  "sampled_at": "2026-11-18T13:25:38.588549+00:00",
+  "platform": "Linux",
+  "source": "inotify",
+  "units": {
+    "duration": "seconds"
+  },
+  "data": {
+    "events": [
+      {
+        "name": "notes.txt",
+        "events": [
+          "OPEN"
+        ]
+      },
+      {
+        "name": "notes.txt",
+        "events": [
+          "ACCESS"
+        ]
+      },
+      {
+        "name": "notes.txt",
+        "events": [
+          "CLOSE_NOWRITE"
+        ]
+      }
+    ],
+    "requested_seconds": 4.0,
+    "duration_seconds": 4.002590419999933,
+    "truncated": false,
+    "overflow": false
+  },
+  "error": null,
+  "limitations": [
+    "事件可能合并，只观察一层，无法给出每次读取的PID或字节数；空列表不证明无访问。"
+  ]
+}

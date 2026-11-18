@@ -4,8 +4,8 @@ import random
 from types import SimpleNamespace
 from unittest.mock import Mock,patch
 from lab_common import psutil,StudentTaskPending
-from students import memory
-from students.algorithms import page_replace,REFERENCE
+from students import memory,process
+from students.algorithms import page_replace,disk_allocate,scheduler,REFERENCE
 
 
 class MyExperiments(unittest.TestCase):
@@ -184,10 +184,35 @@ class MyExperiments(unittest.TestCase):
         for algorithm in ['SECOND_CHANCE','HYBRID']:
             with self.subTest(algorithm=algorithm),self.assertRaises(StudentTaskPending):page_replace([0],3,algorithm)
 
-    @unittest.skip('TODO：用本人文件边界测试替换此占位')
     def test_filesystem_case(self):
-        raise NotImplementedError('TODO：例如有界扫描截断/并发删除/容量不足回滚')
+        # 删B后有4个空闲块，但分成两段各2块；链接跨段，连续分配失败。
+        operations=[dict(action='create',name=name,blocks=2) for name in 'ABC']
+        operations.extend([dict(action='delete',name='B'),dict(action='create',name='D',blocks=3)])
+        contiguous=disk_allocate('contiguous',8,operations)['log']
+        self.assertEqual(contiguous[-1]['error'],'NO_CONTIGUOUS_RUN')
+        self.assertEqual(contiguous[-1]['map'],contiguous[-2]['map'])
+        self.assertEqual((contiguous[-1]['free_blocks'],contiguous[-1]['largest_free_run']),(4,2))
+        linked=disk_allocate('linked',8,operations)['log'][-1]
+        self.assertEqual(linked['allocated_this_step'],[2,3,6])
+        self.assertEqual(linked['metadata_bytes'],7*8)
+        # 64字节索引块能索引8块；请求9个数据块必须在提交前拒绝。
+        indexed=disk_allocate('indexed',12,[dict(action='create',name='A',size_bytes=65),
+                                            dict(action='create',name='B',blocks=9)],64)['log']
+        self.assertEqual((indexed[0]['index_block'],indexed[0]['internal_waste_bytes']),(0,63))
+        self.assertEqual(indexed[1]['error'],'INDEX_CAPACITY_EXCEEDED')
+        self.assertEqual(indexed[1]['map'],indexed[0]['map'])
 
-    @unittest.skip('TODO：用本人调度反例替换此占位')
     def test_process_case(self):
-        raise NotImplementedError('TODO：例如时间片边界到达或CPU/IO交替的等待定义')
+        # tick=2时B的IO结束、C到达；两者都应排在刚用完时间片的A之前。
+        jobs=[dict(id='B',arrival=0,bursts=[1,1,1]),dict(id='A',arrival=0,burst=3),
+              dict(id='C',arrival=2,burst=1)]
+        data=scheduler(jobs,'RR',1)
+        self.assertEqual([(r['id'],r['start'],r['end']) for r in data['timeline']],
+                         [('B',0,1),('A',1,2),('B',2,3),('C',3,4),('A',4,6)])
+        self.assertEqual([(r['id'],r['waiting'],r['response'],r['turnaround'],r['max_ready_wait']) for r in data['jobs']],
+                         [('B',0,0,3,0),('A',3,1,6,2),('C',1,1,2,1)])
+        for row in data['jobs']:
+            self.assertEqual(row['turnaround'],row['waiting']+row['cpu_time']+row['io_time'])
+        # /proc/stat中的guest和guest_nice不是独立时间；只取前8项。
+        self.assertEqual(process.parse_cpu('cpu 10 20 30 40 50 60 70 80 90 100'),
+                         [10,20,30,40,50,60,70,80])

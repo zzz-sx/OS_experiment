@@ -1,0 +1,2064 @@
+{
+  "created_at": "2026-11-18T13:31:24.529873+00:00",
+  "module": "process",
+  "completed": true,
+  "cloud_model_called": false,
+  "comparisons": [
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "FCFS",
+        "quantum": 1,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "FCFS",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "id": "B",
+            "start": 5,
+            "end": 8
+          },
+          {
+            "id": "C",
+            "start": 8,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 5,
+            "turnaround": 5,
+            "waiting": 0,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 0
+          },
+          {
+            "id": "B",
+            "completion": 8,
+            "turnaround": 7,
+            "waiting": 4,
+            "response": 4,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 4
+          },
+          {
+            "id": "C",
+            "completion": 9,
+            "turnaround": 7,
+            "waiting": 6,
+            "response": 6,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 6
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 5,
+            "id": "A",
+            "event": "complete"
+          },
+          {
+            "tick": 8,
+            "id": "B",
+            "event": "complete"
+          },
+          {
+            "tick": 9,
+            "id": "C",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 3.3333333333333335,
+        "mean_response": 3.3333333333333335,
+        "mean_turnaround": 6.333333333333333,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    },
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "SJF",
+        "quantum": 1,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "SJF",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "id": "C",
+            "start": 5,
+            "end": 6
+          },
+          {
+            "id": "B",
+            "start": 6,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 5,
+            "turnaround": 5,
+            "waiting": 0,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 0
+          },
+          {
+            "id": "B",
+            "completion": 9,
+            "turnaround": 8,
+            "waiting": 5,
+            "response": 5,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 5
+          },
+          {
+            "id": "C",
+            "completion": 6,
+            "turnaround": 4,
+            "waiting": 3,
+            "response": 3,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 3
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 5,
+            "id": "A",
+            "event": "complete"
+          },
+          {
+            "tick": 6,
+            "id": "C",
+            "event": "complete"
+          },
+          {
+            "tick": 9,
+            "id": "B",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 2.6666666666666665,
+        "mean_response": 2.6666666666666665,
+        "mean_turnaround": 5.666666666666667,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    },
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "RR",
+        "quantum": 1,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "RR",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 1
+          },
+          {
+            "id": "B",
+            "start": 1,
+            "end": 2
+          },
+          {
+            "id": "A",
+            "start": 2,
+            "end": 3
+          },
+          {
+            "id": "C",
+            "start": 3,
+            "end": 4
+          },
+          {
+            "id": "B",
+            "start": 4,
+            "end": 5
+          },
+          {
+            "id": "A",
+            "start": 5,
+            "end": 6
+          },
+          {
+            "id": "B",
+            "start": 6,
+            "end": 7
+          },
+          {
+            "id": "A",
+            "start": 7,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 9,
+            "turnaround": 9,
+            "waiting": 4,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 2
+          },
+          {
+            "id": "B",
+            "completion": 7,
+            "turnaround": 6,
+            "waiting": 3,
+            "response": 0,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 2
+          },
+          {
+            "id": "C",
+            "completion": 4,
+            "turnaround": 2,
+            "waiting": 1,
+            "response": 1,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 1
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "B",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 3,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 4,
+            "id": "C",
+            "event": "complete"
+          },
+          {
+            "tick": 5,
+            "id": "B",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 6,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 7,
+            "id": "B",
+            "event": "complete"
+          },
+          {
+            "tick": 8,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 9,
+            "id": "A",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 2.6666666666666665,
+        "mean_response": 0.3333333333333333,
+        "mean_turnaround": 5.666666666666667,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    },
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "FCFS",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "FCFS",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "id": "B",
+            "start": 5,
+            "end": 8
+          },
+          {
+            "id": "C",
+            "start": 8,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 5,
+            "turnaround": 5,
+            "waiting": 0,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 0
+          },
+          {
+            "id": "B",
+            "completion": 8,
+            "turnaround": 7,
+            "waiting": 4,
+            "response": 4,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 4
+          },
+          {
+            "id": "C",
+            "completion": 9,
+            "turnaround": 7,
+            "waiting": 6,
+            "response": 6,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 6
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 5,
+            "id": "A",
+            "event": "complete"
+          },
+          {
+            "tick": 8,
+            "id": "B",
+            "event": "complete"
+          },
+          {
+            "tick": 9,
+            "id": "C",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 3.3333333333333335,
+        "mean_response": 3.3333333333333335,
+        "mean_turnaround": 6.333333333333333,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    },
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "SJF",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "SJF",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 5
+          },
+          {
+            "id": "C",
+            "start": 5,
+            "end": 6
+          },
+          {
+            "id": "B",
+            "start": 6,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 5,
+            "turnaround": 5,
+            "waiting": 0,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 0
+          },
+          {
+            "id": "B",
+            "completion": 9,
+            "turnaround": 8,
+            "waiting": 5,
+            "response": 5,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 5
+          },
+          {
+            "id": "C",
+            "completion": 6,
+            "turnaround": 4,
+            "waiting": 3,
+            "response": 3,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 3
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 5,
+            "id": "A",
+            "event": "complete"
+          },
+          {
+            "tick": 6,
+            "id": "C",
+            "event": "complete"
+          },
+          {
+            "tick": 9,
+            "id": "B",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 2.6666666666666665,
+        "mean_response": 2.6666666666666665,
+        "mean_turnaround": 5.666666666666667,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    },
+    {
+      "experiment": "scheduler",
+      "parameters": {
+        "algorithm": "RR",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 5
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 3
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "kind": "simulation",
+      "status": "COMPLETED",
+      "data": {
+        "algorithm": "RR",
+        "timeline": [
+          {
+            "id": "A",
+            "start": 0,
+            "end": 2
+          },
+          {
+            "id": "B",
+            "start": 2,
+            "end": 4
+          },
+          {
+            "id": "C",
+            "start": 4,
+            "end": 5
+          },
+          {
+            "id": "A",
+            "start": 5,
+            "end": 7
+          },
+          {
+            "id": "B",
+            "start": 7,
+            "end": 8
+          },
+          {
+            "id": "A",
+            "start": 8,
+            "end": 9
+          }
+        ],
+        "jobs": [
+          {
+            "id": "A",
+            "completion": 9,
+            "turnaround": 9,
+            "waiting": 4,
+            "response": 0,
+            "cpu_time": 5,
+            "io_time": 0,
+            "max_ready_wait": 3
+          },
+          {
+            "id": "B",
+            "completion": 8,
+            "turnaround": 7,
+            "waiting": 4,
+            "response": 1,
+            "cpu_time": 3,
+            "io_time": 0,
+            "max_ready_wait": 3
+          },
+          {
+            "id": "C",
+            "completion": 5,
+            "turnaround": 3,
+            "waiting": 2,
+            "response": 2,
+            "cpu_time": 1,
+            "io_time": 0,
+            "max_ready_wait": 2
+          }
+        ],
+        "events": [
+          {
+            "tick": 0,
+            "id": "A",
+            "event": "arrival"
+          },
+          {
+            "tick": 1,
+            "id": "B",
+            "event": "arrival"
+          },
+          {
+            "tick": 2,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 2,
+            "id": "C",
+            "event": "arrival"
+          },
+          {
+            "tick": 4,
+            "id": "B",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 5,
+            "id": "C",
+            "event": "complete"
+          },
+          {
+            "tick": 7,
+            "id": "A",
+            "event": "quantum_expired"
+          },
+          {
+            "tick": 8,
+            "id": "B",
+            "event": "complete"
+          },
+          {
+            "tick": 9,
+            "id": "A",
+            "event": "complete"
+          }
+        ],
+        "mean_waiting": 3.3333333333333335,
+        "mean_response": 1.0,
+        "mean_turnaround": 6.333333333333333,
+        "cpu_utilization": 1.0,
+        "assumptions": [
+          "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+          "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+          "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+        ]
+      }
+    }
+  ],
+  "controlled_observations": {
+    "status": "COMPLETED",
+    "kind": "controlled_workload",
+    "cases": [
+      {
+        "kind": "controlled_workload",
+        "mode": "sleep",
+        "process_count": 1,
+        "max_memory_mib": 0,
+        "before": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:09.308738+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3051687936,
+            "used": 519008256,
+            "free": 2842644480,
+            "percent": 14.5,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "during": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:09.783355+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3051429888,
+            "used": 519266304,
+            "free": 2842386432,
+            "percent": 14.5,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "after": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:12.351934+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3069894656,
+            "used": 500801536,
+            "free": 2860834816,
+            "percent": 14.0,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "process_switches": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:09.481647+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7242,
+              "elapsed_seconds": 0.15021906900005888,
+              "delta": {
+                "voluntary": 140,
+                "involuntary": 0
+              },
+              "rate_per_second": {
+                "voluntary": 931.9722251769855,
+                "involuntary": 0.0
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          }
+        ],
+        "process_memory": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:09.582759+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7242,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:09.482141+00:00",
+                  "monotonic_seconds": 1988.000661259,
+                  "rss_bytes": 23552000,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1617,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:09.582731+00:00",
+                  "monotonic_seconds": 1988.101258628,
+                  "rss_bytes": 23552000,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1617,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.1005973690000701
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          }
+        ],
+        "cpu": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:09.783085+00:00",
+          "platform": "Linux",
+          "source": "/proc/stat (aggregate cpu)",
+          "units": {
+            "raw_delta_ticks": "ticks",
+            "percent": "percent",
+            "elapsed": "seconds"
+          },
+          "data": {
+            "elapsed_seconds": 0.20024670599991623,
+            "raw_delta_ticks": [
+              0,
+              0,
+              0,
+              39,
+              0,
+              1,
+              0,
+              0
+            ],
+            "total_ticks": 40,
+            "user_percent": 0.0,
+            "system_percent": 2.5,
+            "idle_percent": 97.5,
+            "iowait_percent": 0.0,
+            "steal_percent": 0.0
+          },
+          "error": null,
+          "limitations": [
+            "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+          ]
+        },
+        "limitations": [
+          "Different runs share the host; do not attribute all system-wide changes to the workload. No swap-exhaustion experiment. Per-switch time/cache cost is not measured."
+        ]
+      },
+      {
+        "kind": "controlled_workload",
+        "mode": "cpu",
+        "process_count": 1,
+        "max_memory_mib": 0,
+        "before": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:12.352040+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3069894656,
+            "used": 500801536,
+            "free": 2860834816,
+            "percent": 14.0,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "during": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:12.821839+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3069874176,
+            "used": 500822016,
+            "free": 2860806144,
+            "percent": 14.0,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "after": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:15.392035+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3090358272,
+            "used": 480337920,
+            "free": 2881290240,
+            "percent": 13.5,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "process_switches": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:12.520071+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7253,
+              "elapsed_seconds": 0.15019796000001406,
+              "delta": {
+                "voluntary": 0,
+                "involuntary": 1
+              },
+              "rate_per_second": {
+                "voluntary": 0.0,
+                "involuntary": 6.6578800404473295
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          }
+        ],
+        "process_memory": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:12.621374+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7253,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:12.520685+00:00",
+                  "monotonic_seconds": 1991.039205736,
+                  "rss_bytes": 23560192,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1616,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:12.621342+00:00",
+                  "monotonic_seconds": 1991.139872797,
+                  "rss_bytes": 23560192,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1616,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.10066706099996736
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          }
+        ],
+        "cpu": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:12.821654+00:00",
+          "platform": "Linux",
+          "source": "/proc/stat (aggregate cpu)",
+          "units": {
+            "raw_delta_ticks": "ticks",
+            "percent": "percent",
+            "elapsed": "seconds"
+          },
+          "data": {
+            "elapsed_seconds": 0.200209563000044,
+            "raw_delta_ticks": [
+              20,
+              0,
+              0,
+              19,
+              0,
+              0,
+              0,
+              0
+            ],
+            "total_ticks": 39,
+            "user_percent": 51.282051282051285,
+            "system_percent": 0.0,
+            "idle_percent": 48.717948717948715,
+            "iowait_percent": 0.0,
+            "steal_percent": 0.0
+          },
+          "error": null,
+          "limitations": [
+            "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+          ]
+        },
+        "limitations": [
+          "Different runs share the host; do not attribute all system-wide changes to the workload. No swap-exhaustion experiment. Per-switch time/cache cost is not measured."
+        ]
+      },
+      {
+        "kind": "controlled_workload",
+        "mode": "sleep",
+        "process_count": 2,
+        "max_memory_mib": 0,
+        "before": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:15.392151+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3090358272,
+            "used": 480337920,
+            "free": 2881290240,
+            "percent": 13.5,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "during": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:16.133693+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3088551936,
+            "used": 482144256,
+            "free": 2879483904,
+            "percent": 13.5,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "after": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:18.451306+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3100778496,
+            "used": 469917696,
+            "free": 2891706368,
+            "percent": 13.2,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "process_switches": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:15.580858+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7263,
+              "elapsed_seconds": 0.15016226099987762,
+              "delta": {
+                "voluntary": 140,
+                "involuntary": 0
+              },
+              "rate_per_second": {
+                "voluntary": 932.3248003046125,
+                "involuntary": 0.0
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          },
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:15.731197+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7264,
+              "elapsed_seconds": 0.1501512959998763,
+              "delta": {
+                "voluntary": 140,
+                "involuntary": 0
+              },
+              "rate_per_second": {
+                "voluntary": 932.3928845750045,
+                "involuntary": 0.0
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          }
+        ],
+        "process_memory": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:15.832261+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7263,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:15.731672+00:00",
+                  "monotonic_seconds": 1994.250191899,
+                  "rss_bytes": 23412736,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1616,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:15.832238+00:00",
+                  "monotonic_seconds": 1994.350762534,
+                  "rss_bytes": 23412736,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1616,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.10057063500016739
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          },
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:15.933264+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7264,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:15.832610+00:00",
+                  "monotonic_seconds": 1994.351127735,
+                  "rss_bytes": 23519232,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1614,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:15.933234+00:00",
+                  "monotonic_seconds": 1994.451762681,
+                  "rss_bytes": 23519232,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1614,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.10063494599990008
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          }
+        ],
+        "cpu": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:16.133524+00:00",
+          "platform": "Linux",
+          "source": "/proc/stat (aggregate cpu)",
+          "units": {
+            "raw_delta_ticks": "ticks",
+            "percent": "percent",
+            "elapsed": "seconds"
+          },
+          "data": {
+            "elapsed_seconds": 0.2001893999999993,
+            "raw_delta_ticks": [
+              0,
+              0,
+              0,
+              39,
+              0,
+              0,
+              0,
+              0
+            ],
+            "total_ticks": 39,
+            "user_percent": 0.0,
+            "system_percent": 0.0,
+            "idle_percent": 100.0,
+            "iowait_percent": 0.0,
+            "steal_percent": 0.0
+          },
+          "error": null,
+          "limitations": [
+            "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+          ]
+        },
+        "limitations": [
+          "Different runs share the host; do not attribute all system-wide changes to the workload. No swap-exhaustion experiment. Per-switch time/cache cost is not measured."
+        ]
+      },
+      {
+        "kind": "controlled_workload",
+        "mode": "cpu",
+        "process_count": 2,
+        "max_memory_mib": 0,
+        "before": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:18.451426+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3100778496,
+            "used": 469917696,
+            "free": 2891706368,
+            "percent": 13.2,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "during": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:19.193216+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3096952832,
+            "used": 473743360,
+            "free": 2887880704,
+            "percent": 13.3,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "after": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:21.491833+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3106287616,
+            "used": 464408576,
+            "free": 2897178624,
+            "percent": 13.0,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "process_switches": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:18.638798+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7271,
+              "elapsed_seconds": 0.1520331219999207,
+              "delta": {
+                "voluntary": 0,
+                "involuntary": 45
+              },
+              "rate_per_second": {
+                "voluntary": 0.0,
+                "involuntary": 295.9881334280794
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          },
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:18.790694+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7272,
+              "elapsed_seconds": 0.15167035199988277,
+              "delta": {
+                "voluntary": 0,
+                "involuntary": 56
+              },
+              "rate_per_second": {
+                "voluntary": 0.0,
+                "involuntary": 369.2217975471125
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          }
+        ],
+        "process_memory": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:18.891999+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7271,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:18.791109+00:00",
+                  "monotonic_seconds": 1997.309627285,
+                  "rss_bytes": 23306240,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1613,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:18.891976+00:00",
+                  "monotonic_seconds": 1997.410502196,
+                  "rss_bytes": 23306240,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1613,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.10087491099989165
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          },
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:18.992836+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7272,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:18.892305+00:00",
+                  "monotonic_seconds": 1997.410821985,
+                  "rss_bytes": 23498752,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1615,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:18.992812+00:00",
+                  "monotonic_seconds": 1997.511337741,
+                  "rss_bytes": 23498752,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 1615,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.1005157560000498
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          }
+        ],
+        "cpu": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:19.193062+00:00",
+          "platform": "Linux",
+          "source": "/proc/stat (aggregate cpu)",
+          "units": {
+            "raw_delta_ticks": "ticks",
+            "percent": "percent",
+            "elapsed": "seconds"
+          },
+          "data": {
+            "elapsed_seconds": 0.2001698399999441,
+            "raw_delta_ticks": [
+              39,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "total_ticks": 39,
+            "user_percent": 100.0,
+            "system_percent": 0.0,
+            "idle_percent": 0.0,
+            "iowait_percent": 0.0,
+            "steal_percent": 0.0
+          },
+          "error": null,
+          "limitations": [
+            "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+          ]
+        },
+        "limitations": [
+          "Different runs share the host; do not attribute all system-wide changes to the workload. No swap-exhaustion experiment. Per-switch time/cache cost is not measured."
+        ]
+      },
+      {
+        "kind": "controlled_workload",
+        "mode": "memory",
+        "process_count": 1,
+        "max_memory_mib": 16,
+        "before": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:21.491943+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3106287616,
+            "used": 464408576,
+            "free": 2897178624,
+            "percent": 13.0,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "during": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:21.961288+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3085701120,
+            "used": 484995072,
+            "free": 2876592128,
+            "percent": 13.6,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "after": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:24.529838+00:00",
+          "platform": "Linux",
+          "source": "psutil.virtual_memory / swap_memory",
+          "units": {
+            "memory": "bytes",
+            "percent": "percent"
+          },
+          "data": {
+            "total": 3570696192,
+            "available": 3102978048,
+            "used": 467718144,
+            "free": 2893856768,
+            "percent": 13.1,
+            "swap": {
+              "total": 0,
+              "used": 0,
+              "free": 0,
+              "percent": 0.0,
+              "sin": 0,
+              "sout": 0
+            }
+          },
+          "error": null,
+          "limitations": [
+            "available是估计值；一次快照不足以证明抖动。",
+            "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+          ]
+        },
+        "process_switches": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:21.659892+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.num_ctx_switches",
+            "units": {
+              "delta": "count",
+              "rate": "count/s",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7293,
+              "elapsed_seconds": 0.15015956299998834,
+              "delta": {
+                "voluntary": 2,
+                "involuntary": 0
+              },
+              "rate_per_second": {
+                "voluntary": 13.319165027139533,
+                "involuntary": 0.0
+              }
+            },
+            "error": null,
+            "limitations": [
+              "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+            ]
+          }
+        ],
+        "process_memory": [
+          {
+            "ok": true,
+            "kind": "observation",
+            "sampled_at": "2026-11-18T13:31:21.760882+00:00",
+            "platform": "Linux",
+            "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+            "units": {
+              "rss": "bytes",
+              "swap": "bytes",
+              "faults": "count",
+              "elapsed": "seconds"
+            },
+            "data": {
+              "pid": 7293,
+              "samples": [
+                {
+                  "sampled_at": "2026-11-18T13:31:21.660311+00:00",
+                  "monotonic_seconds": 2000.178829958,
+                  "rss_bytes": 40222720,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 2135,
+                  "major_faults": 0
+                },
+                {
+                  "sampled_at": "2026-11-18T13:31:21.760855+00:00",
+                  "monotonic_seconds": 2000.279383958,
+                  "rss_bytes": 40222720,
+                  "system_swap_in_bytes": 0,
+                  "system_swap_out_bytes": 0,
+                  "minor_faults": 2135,
+                  "major_faults": 0
+                }
+              ],
+              "delta": {
+                "rss_bytes": 0,
+                "system_swap_in_bytes": 0,
+                "system_swap_out_bytes": 0,
+                "minor_faults": 0,
+                "major_faults": 0,
+                "elapsed_seconds": 0.10055399999987458
+              }
+            },
+            "error": null,
+            "limitations": [
+              "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+              "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+              "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+            ]
+          }
+        ],
+        "cpu": {
+          "ok": true,
+          "kind": "observation",
+          "sampled_at": "2026-11-18T13:31:21.961128+00:00",
+          "platform": "Linux",
+          "source": "/proc/stat (aggregate cpu)",
+          "units": {
+            "raw_delta_ticks": "ticks",
+            "percent": "percent",
+            "elapsed": "seconds"
+          },
+          "data": {
+            "elapsed_seconds": 0.20018513700006224,
+            "raw_delta_ticks": [
+              0,
+              0,
+              0,
+              40,
+              0,
+              0,
+              0,
+              0
+            ],
+            "total_ticks": 40,
+            "user_percent": 0.0,
+            "system_percent": 0.0,
+            "idle_percent": 100.0,
+            "iowait_percent": 0.0,
+            "steal_percent": 0.0
+          },
+          "error": null,
+          "limitations": [
+            "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+          ]
+        },
+        "limitations": [
+          "Different runs share the host; do not attribute all system-wide changes to the workload. No swap-exhaustion experiment. Per-switch time/cache cost is not measured."
+        ]
+      }
+    ]
+  }
+}

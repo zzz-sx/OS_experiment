@@ -1,0 +1,2574 @@
+{
+  "started_at": "2026-11-18T13:31:24.921956+00:00",
+  "stage": "all",
+  "advanced": false,
+  "scope": "openEuler_target",
+  "platform": "Linux-6.6.0-112.0.0.104.oe2403.x86_64-x86_64-with-glibc2.38",
+  "python": "3.11.16 (main, Sep 29 2026, 14:59:26) [Clang 22.1.3 ]",
+  "os_release": "NAME=\"openEuler\"\nVERSION=\"24.03 (LTS)\"\nID=\"openEuler\"\nVERSION_ID=\"24.03\"\nPRETTY_NAME=\"openEuler 24.03 (LTS)\"\nANSI_COLOR=\"0;31\"\n\n",
+  "cloud_model_called": false,
+  "dependencies": {
+    "mcp": "1.30.0",
+    "psutil": "7.2.2",
+    "httpx": "0.28.1",
+    "pydantic": "2.13.5",
+    "jsonschema": "4.26.0"
+  },
+  "source_sha256": {
+    "configure_lab.py": "2ccdfb288b3669a49da21637926f87ead86a97c2a92419bb442d3c8fee12e37c",
+    "server.py": "664a28d7a46b02f7896f452fbf9d77b907b2d4a1e1517dd4fef374bf3249279a",
+    "host.py": "c2da10002560473db39ad7dcfdf3f4be68bef41b9bafc8b0067c1a6e069f0de3",
+    "target-validation.py": "bedc6a8020320120da5ba0373ba73c9f5dda464cfc5e3f29afde558ba9ad93fa",
+    "controlled_runner.py": "e7442192593c44a12afd78f68ba9cf522ce1a05e5bec76bdcea546834ef640c6",
+    "web_ui.py": "35fdf302b2f8f71134efa1f2f912097eb78d0e2931b1804dc5e2a0ea54393d54",
+    "model_gateway.py": "93d8946ef7e2c0bb97324efafd56582b465840174a8a58d5f20230c577d44539",
+    "prepare_lab.py": "962e5e9c44bc8322fae479390a4a43b2a5f787bd037b1c9905f2f5f7c48520f4",
+    "presentation_helpers.py": "5d5b1a1be5749aa3c7e6161b60ee5ed438ad14d2d83189b9c428d9e6ad310631",
+    "process_server.py": "ce2bb57d7fc7a73140c4250c7fd6b3cf54d0580396746e95263de3f4305f4601",
+    "mcp_bridge.py": "3fc0f6974f62add063491d7f104372ba5b6bf4e9e9381701f69f51610767934e",
+    "api_probe.py": "507e3a5b9d0c70e91a3e4b47f7bcc486669e875cab465f7070ae8ea3128e427b",
+    "experiments.py": "4a6fad9722ef10f18551a08a15e1ba95f1fd475df7a03cee98dcaf7faa00f6ac",
+    "algorithms.py": "3f6321cb7512c5e7ef8d87516d4bf0f0bb4d4e9f1e7209a2d7797a3e02a0f935",
+    "os_tools.py": "72ec7ec1c286446f2bfaad1082153af7710fc1a2ce94814fb07bbcad1cb2ea32",
+    "assessment.py": "74df76b36791ad21027a19aae19fe051d0a8562cbc11df5fb2a3607ea4becd48",
+    "test_framework.py": "278073f564ae5b8d85bac3822a6ae73d68d36ac79e4ab7daff43a0c0aad4ce84",
+    "test_student_custom.py": "3288b8b86c955aa55a2807d49efd0295098232296b7a26571cee888e41081cc6",
+    "test_setup.py": "13ebb502ac48b85a05757aa6d9e528338bc9c3dcac8c5b90ce029a56f74d5c9a",
+    "validate_lab.py": "b8f4ee0ac001eeef8aad29857be9536d14a2a807848b5f77e69b9f0a199036ab",
+    "prepare_fixtures.py": "b37a310ad190c70cd96c75dfceebe212c40a29f4030f821ebd162e31aaf65cfa",
+    "lab_common.py": "410af88120fd565c8aa65477dd7fdfc0d0e18cc8d529c2bc44c85cf5f1a80110",
+    "test_student_acceptance.py": "4618d5eb466d6ef8868d9717b56a0ee6d7a6561aaf948c777b3b1d84d95fa969",
+    "mcp_check.py": "da3260c0a908379e2fb51f2999dec50c758fa3d37dc7d805c409253fa2d33d9a",
+    "preflight.py": "e9d0e19e59bfa5ef1a8dab0004a370978c4c23e8132ad3485d2c7645f8d69e5c",
+    "filesystem_server.py": "96bd53b2d824ea9fca3992c948cb47acc95c819ccbc19542980087b6e7b987ca",
+    "memory_server.py": "95dfea97cdf76c41dfc5826ce66ee261c3db7c7c0d774027e3775c6aa7dc68d5",
+    "workload.py": "f6d8bceac4fd18cc9b1804b292352a0186d09ec6f9ab846d3efacd5852d8fcc8",
+    "students/process.py": "82cbd1558edaf6f48696c519a3f22491c0a5dc9efa2225ef6bbdc4a48594457c",
+    "students/interaction_helpers.py": "78b446ae76614d676c287adf08c98c4a94abfa3a4dafe819b05931cd92601cfd",
+    "students/__init__.py": "d6c3dd20dfc55b3fd724a16eac8a1765d5bd168e8e5c6ca31f8b7dc774d4f949",
+    "students/algorithms.py": "5ab5e34479211a7a65420d514b4e48fec739fdc15af921a24c35d0e2509ebcb5",
+    "students/filesystem.py": "ab8b036265bc1d873b5bafe37428aae3d07354a05ac60cd112e0f328aa1d59ba",
+    "students/memory.py": "21ff03caf11896cec26d5d30064e35db948cc8d61b702e8a9ed43766b2952d94"
+  },
+  "tools": [
+    "get_time",
+    "get_memory_info",
+    "list_top_processes",
+    "get_process_memory",
+    "analyze_memory_patterns",
+    "simulate_page_fault",
+    "get_filesystem_info",
+    "analyze_file_distribution",
+    "trace_file_access",
+    "simulate_disk_allocation",
+    "get_process_tree",
+    "monitor_context_switches",
+    "simulate_scheduler",
+    "analyze_scheduling",
+    "sample_process_memory",
+    "get_process_schedstat"
+  ],
+  "calls": [
+    {
+      "tool": "get_time",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "status",
+        "sampled_at": "2026-11-18T13:31:25.345144+00:00",
+        "platform": "Linux",
+        "source": "Python datetime",
+        "units": {},
+        "data": {
+          "timezone": "UTC"
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "get_memory_info",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.346635+00:00",
+        "platform": "Linux",
+        "source": "psutil.virtual_memory / swap_memory",
+        "units": {
+          "memory": "bytes",
+          "percent": "percent"
+        },
+        "data": {
+          "total": 3570696192,
+          "available": 3041787904,
+          "used": 528908288,
+          "free": 2832556032,
+          "percent": 14.8,
+          "swap": {
+            "total": 0,
+            "used": 0,
+            "free": 0,
+            "percent": 0.0,
+            "sin": 0,
+            "sout": 0
+          }
+        },
+        "error": null,
+        "limitations": [
+          "available是估计值；一次快照不足以证明抖动。",
+          "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+        ]
+      }
+    },
+    {
+      "tool": "get_memory_info",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.347922+00:00",
+        "platform": "Linux",
+        "source": "psutil.virtual_memory / swap_memory",
+        "units": {
+          "memory": "bytes",
+          "percent": "percent"
+        },
+        "data": {
+          "total": 3570696192,
+          "available": 3041787904,
+          "used": 528908288,
+          "free": 2832556032,
+          "percent": 14.8,
+          "swap": {
+            "total": 0,
+            "used": 0,
+            "free": 0,
+            "percent": 0.0,
+            "sin": 0,
+            "sout": 0
+          }
+        },
+        "error": null,
+        "limitations": [
+          "available是估计值；一次快照不足以证明抖动。",
+          "swap.total=0表示未配置可用交换区，不能据此断言无缺页。"
+        ]
+      }
+    },
+    {
+      "tool": "list_top_processes",
+      "arguments": {
+        "limit": 3
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.353092+00:00",
+        "platform": "Linux",
+        "source": "psutil.process_iter / Process.memory_info",
+        "units": {
+          "rss": "bytes"
+        },
+        "data": {
+          "processes": [
+            {
+              "pid": 7303,
+              "ppid": 7301,
+              "name": "python",
+              "rss": 66560000
+            },
+            {
+              "pid": 7301,
+              "ppid": 7067,
+              "name": "python",
+              "rss": 65716224
+            },
+            {
+              "pid": 7067,
+              "ppid": 7064,
+              "name": "bash",
+              "rss": 11476992
+            }
+          ],
+          "excluded": 107
+        },
+        "error": null,
+        "limitations": [
+          "仅当前真实UID；excluded含其他UID及读取失败的进程；动态快照不是原子操作。",
+          "RSS可能重复计入共享页，不能相加当作独占物理内存。"
+        ]
+      }
+    },
+    {
+      "tool": "get_process_memory",
+      "arguments": {
+        "pid": 7301
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.355923+00:00",
+        "platform": "Linux",
+        "source": "psutil.Process.memory_info / /proc/PID/smaps",
+        "units": {
+          "memory": "bytes",
+          "maps": "KiB"
+        },
+        "data": {
+          "pid": 7301,
+          "name": "python",
+          "memory": {
+            "rss": 65716224,
+            "vms": 162705408,
+            "shared": 25214976,
+            "text": 10776576,
+            "lib": 0,
+            "data": 49700864,
+            "dirty": 0
+          },
+          "maps": [
+            {
+              "address": "55f4aa520000-55f4aa6fd000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 1908,
+              "Rss_KiB": 1908,
+              "Pss_KiB": 954,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "55f4aa6fd000-55f4ab144000",
+              "permissions": "r-xp",
+              "label": "python3.11",
+              "Size_KiB": 10524,
+              "Rss_KiB": 6168,
+              "Pss_KiB": 3102,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "55f4ab144000-55f4ab5ca000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 4632,
+              "Rss_KiB": 1776,
+              "Pss_KiB": 896,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "55f4ab5ca000-55f4ab69e000",
+              "permissions": "r--p",
+              "label": "python3.11",
+              "Size_KiB": 848,
+              "Rss_KiB": 748,
+              "Pss_KiB": 748,
+              "Private_Dirty_KiB": 748
+            },
+            {
+              "address": "55f4ab69e000-55f4ab7e7000",
+              "permissions": "rw-p",
+              "label": "python3.11",
+              "Size_KiB": 1316,
+              "Rss_KiB": 1316,
+              "Pss_KiB": 1316,
+              "Private_Dirty_KiB": 1316
+            },
+            {
+              "address": "55f4ab7e7000-55f4ab834000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 308,
+              "Rss_KiB": 40,
+              "Pss_KiB": 40,
+              "Private_Dirty_KiB": 40
+            },
+            {
+              "address": "55f4ad993000-55f4ad9a1000",
+              "permissions": "rw-p",
+              "label": "python3.11",
+              "Size_KiB": 56,
+              "Rss_KiB": 56,
+              "Pss_KiB": 30,
+              "Private_Dirty_KiB": 4
+            },
+            {
+              "address": "55f4c6a2c000-55f4c7630000",
+              "permissions": "rw-p",
+              "label": "[heap]",
+              "Size_KiB": 12304,
+              "Rss_KiB": 11944,
+              "Pss_KiB": 11944,
+              "Private_Dirty_KiB": 11944
+            },
+            {
+              "address": "7f6928000000-7f6928021000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 132,
+              "Rss_KiB": 4,
+              "Pss_KiB": 4,
+              "Private_Dirty_KiB": 4
+            },
+            {
+              "address": "7f6928021000-7f692c000000",
+              "permissions": "---p",
+              "label": "[anonymous]",
+              "Size_KiB": 65404,
+              "Rss_KiB": 0,
+              "Pss_KiB": 0,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "7f692d765000-7f692d766000",
+              "permissions": "---p",
+              "label": "[anonymous]",
+              "Size_KiB": 4,
+              "Rss_KiB": 0,
+              "Pss_KiB": 0,
+              "Private_Dirty_KiB": 0
+            },
+            {
+              "address": "7f692d766000-7f692df66000",
+              "permissions": "rw-p",
+              "label": "[anonymous]",
+              "Size_KiB": 8192,
+              "Rss_KiB": 8,
+              "Pss_KiB": 8,
+              "Private_Dirty_KiB": 8
+            }
+          ],
+          "maps_partial": true
+        },
+        "error": null,
+        "limitations": [
+          "RSS包含共享页；映射与RSS不是原子快照，映射单位KiB，memory单位bytes。",
+          "达到映射数量或读取字节上限，maps仅为部分结果。"
+        ]
+      }
+    },
+    {
+      "tool": "sample_process_memory",
+      "arguments": {
+        "pid": 7301,
+        "samples": 2,
+        "interval": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.458139+00:00",
+        "platform": "Linux",
+        "source": "psutil.Process.memory_info / swap_memory / /proc/PID/stat",
+        "units": {
+          "rss": "bytes",
+          "swap": "bytes",
+          "faults": "count",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "pid": 7301,
+          "samples": [
+            {
+              "sampled_at": "2026-11-18T13:31:25.357504+00:00",
+              "monotonic_seconds": 2003.876024161,
+              "rss_bytes": 65716224,
+              "system_swap_in_bytes": 0,
+              "system_swap_out_bytes": 0,
+              "minor_faults": 10585,
+              "major_faults": 0
+            },
+            {
+              "sampled_at": "2026-11-18T13:31:25.458110+00:00",
+              "monotonic_seconds": 2003.976638338,
+              "rss_bytes": 65716224,
+              "system_swap_in_bytes": 0,
+              "system_swap_out_bytes": 0,
+              "minor_faults": 10585,
+              "major_faults": 0
+            }
+          ],
+          "delta": {
+            "rss_bytes": 0,
+            "system_swap_in_bytes": 0,
+            "system_swap_out_bytes": 0,
+            "minor_faults": 0,
+            "major_faults": 0,
+            "elapsed_seconds": 0.10061417699989761
+          }
+        },
+        "error": null,
+        "limitations": [
+          "各字段顺序读取，不是原子快照；monotonic用于区间，UTC用于证据时间。",
+          "swap为系统累计计数，不等于该进程IO；RSS、minor/major faults与抖动不同。",
+          "采样间可能遗漏短暂变化；非Linux不提供/proc缺页计数。"
+        ]
+      }
+    },
+    {
+      "tool": "analyze_memory_patterns",
+      "arguments": {
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ]
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:25.460269+00:00",
+        "platform": "Linux",
+        "source": "explicit page reference sequence",
+        "units": {
+          "reuse_interval": "references",
+          "adjacent_page_ratio": "fraction"
+        },
+        "data": {
+          "length": 4,
+          "distinct_pages": 3,
+          "repeated_references": 1,
+          "mean_reuse_interval": 2.0,
+          "adjacent_page_ratio": 0.6666666666666666
+        },
+        "error": null,
+        "limitations": [
+          "只描述输入序列的复用及相邻页号代理指标，不能证明真实程序局部性或抖动。"
+        ]
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "FIFO",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:25.461939+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "FIFO",
+          "selected_algorithm": "FIFO",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "LRU",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:25.463266+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "LRU",
+          "selected_algorithm": "LRU",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 1,
+              "frames": [
+                0,
+                2
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "CLOCK",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:25.464425+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "CLOCK",
+          "selected_algorithm": "CLOCK",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ],
+              "reference_bits": [
+                1,
+                0
+              ],
+              "hand": 1,
+              "cleared_slots": []
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ],
+              "reference_bits": [
+                1,
+                1
+              ],
+              "hand": 0,
+              "cleared_slots": []
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ],
+              "reference_bits": [
+                1,
+                1
+              ],
+              "hand": 0,
+              "cleared_slots": []
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ],
+              "reference_bits": [
+                1,
+                0
+              ],
+              "hand": 1,
+              "cleared_slots": [
+                0,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_page_fault",
+      "arguments": {
+        "algorithm": "OPT",
+        "frames": 2,
+        "pages": [
+          0,
+          1,
+          0,
+          2
+        ],
+        "seed": 42
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:25.465654+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.page_replace",
+        "units": {
+          "fault_rate": "fraction",
+          "faults": "count"
+        },
+        "data": {
+          "algorithm": "OPT",
+          "selected_algorithm": "OPT",
+          "seed": 42,
+          "frame_count": 2,
+          "faults": 3,
+          "fault_rate": 0.75,
+          "log": [
+            {
+              "step": 1,
+              "page": 0,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                null
+              ]
+            },
+            {
+              "step": 2,
+              "page": 1,
+              "hit": false,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 3,
+              "page": 0,
+              "hit": true,
+              "evicted": null,
+              "frames": [
+                0,
+                1
+              ]
+            },
+            {
+              "step": 4,
+              "page": 2,
+              "hit": false,
+              "evicted": 0,
+              "frames": [
+                2,
+                1
+              ]
+            }
+          ],
+          "assumptions": [
+            "空页框用null表示；空闲槽按下标填充；确定性策略并列候选选择最低槽号；时间为引用步数。",
+            "OPT预知全部未来引用，只作离线比较下界，不能在线实现。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "get_filesystem_info",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.466972+00:00",
+        "platform": "Linux",
+        "source": "psutil.disk_usage / os.statvfs",
+        "units": {
+          "capacity": "bytes",
+          "percent": "percent",
+          "inodes": "count"
+        },
+        "data": {
+          "path": ".",
+          "capacity": {
+            "total": 42156257280,
+            "used": 5662429184,
+            "free": 34651967488,
+            "percent": 14.0
+          },
+          "inodes_total": 2621440,
+          "inodes_free": 2540088,
+          "inodes_used": 81352,
+          "inodes_available": 2540088
+        },
+        "error": null,
+        "limitations": [
+          "容量属于路径所在文件系统，不是目录大小；free是普通用户可用空间，不测碎片率。"
+        ]
+      }
+    },
+    {
+      "tool": "analyze_file_distribution",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:25.468405+00:00",
+        "platform": "Linux",
+        "source": "os.scandir / lstat",
+        "units": {
+          "size": "bytes",
+          "age": "days",
+          "entries": "count"
+        },
+        "data": {
+          "count_by_extension": {
+            ".bin": 1,
+            ".csv": 1,
+            ".txt": 1
+          },
+          "logical_bytes_by_extension": {
+            ".bin": 65536,
+            ".csv": 8192,
+            ".txt": 4096
+          },
+          "allocated_bytes_by_extension": {
+            ".bin": 65536,
+            ".csv": 8192,
+            ".txt": 4096
+          },
+          "size_bucket_counts": {
+            "<1KiB": 0,
+            "1KiB..<1MiB": 3,
+            ">=1MiB": 0
+          },
+          "modification_age_counts": {
+            "0..<1d": 0,
+            "1..<7d": 0,
+            ">=7d": 3
+          },
+          "largest_files": [
+            {
+              "path": "cache.bin",
+              "logical_bytes": 65536,
+              "allocated_bytes": 65536
+            },
+            {
+              "path": "sample.csv",
+              "logical_bytes": 8192,
+              "allocated_bytes": 8192
+            },
+            {
+              "path": "notes.txt",
+              "logical_bytes": 4096,
+              "allocated_bytes": 4096
+            }
+          ],
+          "entries_scanned": 3,
+          "skipped": 0,
+          "partial": false
+        },
+        "error": null,
+        "limitations": [
+          "只统计普通文件；不跟随符号链接。未来修改时间按0天计。",
+          "分配字节按st_blocks×512估计，不能推出碎片率。"
+        ]
+      }
+    },
+    {
+      "tool": "trace_file_access",
+      "arguments": {
+        "seconds": 0.6
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.073533+00:00",
+        "platform": "Linux",
+        "source": "inotify",
+        "units": {
+          "duration": "seconds"
+        },
+        "data": {
+          "events": [
+            {
+              "name": "notes.txt",
+              "events": [
+                "OPEN"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "ACCESS"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "CLOSE_NOWRITE"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "OPEN"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "ACCESS"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "CLOSE_NOWRITE"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "OPEN"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "ACCESS"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "CLOSE_NOWRITE"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "OPEN"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "ACCESS"
+              ]
+            },
+            {
+              "name": "notes.txt",
+              "events": [
+                "CLOSE_NOWRITE"
+              ]
+            }
+          ],
+          "requested_seconds": 0.6,
+          "duration_seconds": 0.6002358759999424,
+          "truncated": false,
+          "overflow": false
+        },
+        "error": null,
+        "limitations": [
+          "事件可能合并，只观察一层，无法给出每次读取的PID或字节数；空列表不证明无访问。"
+        ]
+      }
+    },
+    {
+      "tool": "simulate_disk_allocation",
+      "arguments": {
+        "strategy": "contiguous",
+        "blocks": 24
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.075477+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.disk_allocate",
+        "units": {
+          "space": "abstract blocks"
+        },
+        "data": {
+          "strategy": "contiguous",
+          "block_count": 24,
+          "block_size_bytes": 4096,
+          "files": {
+            "A": {
+              "blocks": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "index_block": null,
+              "logical_bytes": 32768,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0
+            },
+            "C": {
+              "blocks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ],
+              "index_block": null,
+              "logical_bytes": 24576,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0
+            }
+          },
+          "log": [
+            {
+              "operation": {
+                "action": "create",
+                "name": "A",
+                "blocks": 8
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "index_block": null,
+              "free_blocks": 16,
+              "largest_free_run": 16,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 32768,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0,
+              "allocated_fraction": 0.3333333333333333
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "B",
+                "blocks": 5
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "index_block": null,
+              "free_blocks": 11,
+              "largest_free_run": 11,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 53248,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0,
+              "allocated_fraction": 0.5416666666666666
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "C",
+                "blocks": 6
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ],
+              "index_block": null,
+              "free_blocks": 5,
+              "largest_free_run": 5,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 77824,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0,
+              "allocated_fraction": 0.7916666666666666
+            },
+            {
+              "operation": {
+                "action": "delete",
+                "name": "B"
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [],
+              "index_block": null,
+              "free_blocks": 10,
+              "largest_free_run": 5,
+              "free_run_fragmentation": 0.5,
+              "logical_bytes": 57344,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0,
+              "allocated_fraction": 0.5833333333333334
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "D",
+                "blocks": 7
+              },
+              "success": false,
+              "error": "NO_CONTIGUOUS_RUN",
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [],
+              "index_block": null,
+              "free_blocks": 10,
+              "largest_free_run": 5,
+              "free_run_fragmentation": 0.5,
+              "logical_bytes": 57344,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 0,
+              "allocated_fraction": 0.5833333333333334
+            }
+          ],
+          "assumptions": [
+            "按块号从小到大分配；连续分配选首个足够长的空闲段。",
+            "链接每数据块内置8字节指针；索引用独立索引块，allocated_this_step仅列数据块。",
+            "blocks指定数据块数量，逻辑字节按该策略数据块满载计算；size_bytes指定准确字节。",
+            "每步字节指标按当时所有文件汇总；空闲段碎片率为教学模拟指标。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_disk_allocation",
+      "arguments": {
+        "strategy": "linked",
+        "blocks": 24
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.076939+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.disk_allocate",
+        "units": {
+          "space": "abstract blocks"
+        },
+        "data": {
+          "strategy": "linked",
+          "block_count": 24,
+          "block_size_bytes": 4096,
+          "files": {
+            "A": {
+              "blocks": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "index_block": null,
+              "logical_bytes": 32704,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 64
+            },
+            "C": {
+              "blocks": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ],
+              "index_block": null,
+              "logical_bytes": 24528,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 48
+            },
+            "D": {
+              "blocks": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                19,
+                20
+              ],
+              "index_block": null,
+              "logical_bytes": 28616,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 56
+            }
+          },
+          "log": [
+            {
+              "operation": {
+                "action": "create",
+                "name": "A",
+                "blocks": 8
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+              ],
+              "index_block": null,
+              "free_blocks": 16,
+              "largest_free_run": 16,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 32704,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 64,
+              "allocated_fraction": 0.3333333333333333
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "B",
+                "blocks": 5
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                8,
+                9,
+                10,
+                11,
+                12
+              ],
+              "index_block": null,
+              "free_blocks": 11,
+              "largest_free_run": 11,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 53144,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 104,
+              "allocated_fraction": 0.5416666666666666
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "C",
+                "blocks": 6
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                13,
+                14,
+                15,
+                16,
+                17,
+                18
+              ],
+              "index_block": null,
+              "free_blocks": 5,
+              "largest_free_run": 5,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 77672,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 152,
+              "allocated_fraction": 0.7916666666666666
+            },
+            {
+              "operation": {
+                "action": "delete",
+                "name": "B"
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [],
+              "index_block": null,
+              "free_blocks": 10,
+              "largest_free_run": 5,
+              "free_run_fragmentation": 0.5,
+              "logical_bytes": 57232,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 112,
+              "allocated_fraction": 0.5833333333333334
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "D",
+                "blocks": 7
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "D",
+                "D",
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                8,
+                9,
+                10,
+                11,
+                12,
+                19,
+                20
+              ],
+              "index_block": null,
+              "free_blocks": 3,
+              "largest_free_run": 3,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 85848,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 168,
+              "allocated_fraction": 0.875
+            }
+          ],
+          "assumptions": [
+            "按块号从小到大分配；连续分配选首个足够长的空闲段。",
+            "链接每数据块内置8字节指针；索引用独立索引块，allocated_this_step仅列数据块。",
+            "blocks指定数据块数量，逻辑字节按该策略数据块满载计算；size_bytes指定准确字节。",
+            "每步字节指标按当时所有文件汇总；空闲段碎片率为教学模拟指标。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_disk_allocation",
+      "arguments": {
+        "strategy": "indexed",
+        "blocks": 24
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.078218+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.disk_allocate",
+        "units": {
+          "space": "abstract blocks"
+        },
+        "data": {
+          "strategy": "indexed",
+          "block_count": 24,
+          "block_size_bytes": 4096,
+          "files": {
+            "A": {
+              "blocks": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "index_block": 0,
+              "logical_bytes": 32768,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 4096
+            },
+            "C": {
+              "blocks": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+              ],
+              "index_block": 15,
+              "logical_bytes": 24576,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 4096
+            },
+            "D": {
+              "blocks": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                22,
+                23
+              ],
+              "index_block": 9,
+              "logical_bytes": 28672,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 4096
+            }
+          },
+          "log": [
+            {
+              "operation": {
+                "action": "create",
+                "name": "A",
+                "blocks": 8
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "index_block": 0,
+              "free_blocks": 15,
+              "largest_free_run": 15,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 32768,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 4096,
+              "allocated_fraction": 0.375
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "B",
+                "blocks": 5
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                10,
+                11,
+                12,
+                13,
+                14
+              ],
+              "index_block": 9,
+              "free_blocks": 9,
+              "largest_free_run": 9,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 53248,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 8192,
+              "allocated_fraction": 0.625
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "C",
+                "blocks": 6
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                "B",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null
+              ],
+              "allocated_this_step": [
+                16,
+                17,
+                18,
+                19,
+                20,
+                21
+              ],
+              "index_block": 15,
+              "free_blocks": 2,
+              "largest_free_run": 2,
+              "free_run_fragmentation": 0.0,
+              "logical_bytes": 77824,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 12288,
+              "allocated_fraction": 0.9166666666666666
+            },
+            {
+              "operation": {
+                "action": "delete",
+                "name": "B"
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                null,
+                null,
+                null,
+                null,
+                null,
+                null,
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                null,
+                null
+              ],
+              "allocated_this_step": [],
+              "index_block": null,
+              "free_blocks": 8,
+              "largest_free_run": 6,
+              "free_run_fragmentation": 0.25,
+              "logical_bytes": 57344,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 8192,
+              "allocated_fraction": 0.6666666666666666
+            },
+            {
+              "operation": {
+                "action": "create",
+                "name": "D",
+                "blocks": 7
+              },
+              "success": true,
+              "error": null,
+              "map": [
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "A",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "D",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "C",
+                "D",
+                "D"
+              ],
+              "allocated_this_step": [
+                10,
+                11,
+                12,
+                13,
+                14,
+                22,
+                23
+              ],
+              "index_block": 9,
+              "free_blocks": 0,
+              "largest_free_run": 0,
+              "free_run_fragmentation": 0,
+              "logical_bytes": 86016,
+              "internal_waste_bytes": 0,
+              "metadata_bytes": 12288,
+              "allocated_fraction": 1.0
+            }
+          ],
+          "assumptions": [
+            "按块号从小到大分配；连续分配选首个足够长的空闲段。",
+            "链接每数据块内置8字节指针；索引用独立索引块，allocated_this_step仅列数据块。",
+            "blocks指定数据块数量，逻辑字节按该策略数据块满载计算；size_bytes指定准确字节。",
+            "每步字节指标按当时所有文件汇总；空闲段碎片率为教学模拟指标。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "get_process_tree",
+      "arguments": {},
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.081354+00:00",
+        "platform": "Linux",
+        "source": "psutil.process_iter",
+        "units": {
+          "nodes": "count"
+        },
+        "data": {
+          "nodes": [
+            {
+              "pid": 7064,
+              "ppid": 7055,
+              "name": "sshd"
+            },
+            {
+              "pid": 7067,
+              "ppid": 7064,
+              "name": "bash"
+            },
+            {
+              "pid": 7301,
+              "ppid": 7067,
+              "name": "python"
+            },
+            {
+              "pid": 7303,
+              "ppid": 7301,
+              "name": "python"
+            }
+          ],
+          "omitted": 0
+        },
+        "error": null,
+        "limitations": [
+          "仅当前真实UID；父进程可在结果之外，未补造根节点。",
+          "动态快照不是原子操作；omitted含读取失败及超出上限的项。"
+        ]
+      }
+    },
+    {
+      "tool": "monitor_context_switches",
+      "arguments": {
+        "seconds": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.182753+00:00",
+        "platform": "Linux",
+        "source": "psutil.cpu_stats",
+        "units": {
+          "delta": "count",
+          "rate": "count/s",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "pid": null,
+          "elapsed_seconds": 0.10019073900002695,
+          "delta": 182,
+          "rate_per_second": 1816.5351590025805
+        },
+        "error": null,
+        "limitations": [
+          "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+        ]
+      }
+    },
+    {
+      "tool": "monitor_context_switches",
+      "arguments": {
+        "pid": 7301,
+        "seconds": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.284855+00:00",
+        "platform": "Linux",
+        "source": "psutil.Process.num_ctx_switches",
+        "units": {
+          "delta": "count",
+          "rate": "count/s",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "pid": 7301,
+          "elapsed_seconds": 0.10017403300003025,
+          "delta": {
+            "voluntary": 0,
+            "involuntary": 0
+          },
+          "rate_per_second": {
+            "voluntary": 0.0,
+            "involuntary": 0.0
+          }
+        },
+        "error": null,
+        "limitations": [
+          "变化率按实际单调时钟窗口计算，不能推出单次切换耗时、缓存代价或调度延迟。"
+        ]
+      }
+    },
+    {
+      "tool": "analyze_scheduling",
+      "arguments": {
+        "seconds": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.386940+00:00",
+        "platform": "Linux",
+        "source": "/proc/stat (aggregate cpu)",
+        "units": {
+          "raw_delta_ticks": "ticks",
+          "percent": "percent",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "elapsed_seconds": 0.10017695900000945,
+          "raw_delta_ticks": [
+            0,
+            0,
+            0,
+            20,
+            0,
+            0,
+            0,
+            0
+          ],
+          "total_ticks": 20,
+          "user_percent": 0.0,
+          "system_percent": 0.0,
+          "idle_percent": 100.0,
+          "iowait_percent": 0.0,
+          "steal_percent": 0.0
+        },
+        "error": null,
+        "limitations": [
+          "汇总所有CPU；guest时间已计入原字段。iowait不能直接解释为进程等待，比例不能证明调度策略或延迟。"
+        ]
+      }
+    },
+    {
+      "tool": "get_process_schedstat",
+      "arguments": {
+        "pid": 7301,
+        "seconds": 0.1
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "observation",
+        "sampled_at": "2026-11-18T13:31:26.489206+00:00",
+        "platform": "Linux",
+        "source": "/proc/PID/schedstat",
+        "units": {
+          "runtime": "ns",
+          "runqueue_wait": "ns",
+          "mean_runqueue_wait": "ns",
+          "timeslices": "count",
+          "elapsed": "seconds"
+        },
+        "data": {
+          "pid": 7301,
+          "elapsed_seconds": 0.10019275700005892,
+          "runtime_ns": 0,
+          "runqueue_wait_ns": 0,
+          "timeslices": 0,
+          "schedstats_enabled": 0,
+          "mean_runqueue_wait_ns": null
+        },
+        "error": null,
+        "limitations": [
+          "仅统计已启用且有时间片时计算平均值；null不代表零延迟，未修改内核设置。"
+        ]
+      }
+    },
+    {
+      "tool": "simulate_scheduler",
+      "arguments": {
+        "algorithm": "FCFS",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 4
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 5
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.491187+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.scheduler",
+        "units": {
+          "time": "abstract time units"
+        },
+        "data": {
+          "algorithm": "FCFS",
+          "timeline": [
+            {
+              "id": "A",
+              "start": 0,
+              "end": 4
+            },
+            {
+              "id": "B",
+              "start": 4,
+              "end": 9
+            },
+            {
+              "id": "C",
+              "start": 9,
+              "end": 10
+            }
+          ],
+          "jobs": [
+            {
+              "id": "A",
+              "completion": 4,
+              "turnaround": 4,
+              "waiting": 0,
+              "response": 0,
+              "cpu_time": 4,
+              "io_time": 0,
+              "max_ready_wait": 0
+            },
+            {
+              "id": "B",
+              "completion": 9,
+              "turnaround": 8,
+              "waiting": 3,
+              "response": 3,
+              "cpu_time": 5,
+              "io_time": 0,
+              "max_ready_wait": 3
+            },
+            {
+              "id": "C",
+              "completion": 10,
+              "turnaround": 8,
+              "waiting": 7,
+              "response": 7,
+              "cpu_time": 1,
+              "io_time": 0,
+              "max_ready_wait": 7
+            }
+          ],
+          "events": [
+            {
+              "tick": 0,
+              "id": "A",
+              "event": "arrival"
+            },
+            {
+              "tick": 1,
+              "id": "B",
+              "event": "arrival"
+            },
+            {
+              "tick": 2,
+              "id": "C",
+              "event": "arrival"
+            },
+            {
+              "tick": 4,
+              "id": "A",
+              "event": "complete"
+            },
+            {
+              "tick": 9,
+              "id": "B",
+              "event": "complete"
+            },
+            {
+              "tick": 10,
+              "id": "C",
+              "event": "complete"
+            }
+          ],
+          "mean_waiting": 3.3333333333333335,
+          "mean_response": 3.3333333333333335,
+          "mean_turnaround": 6.666666666666667,
+          "cpu_utilization": 1.0,
+          "assumptions": [
+            "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+            "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+            "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_scheduler",
+      "arguments": {
+        "algorithm": "SJF",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 4
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 5
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.492683+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.scheduler",
+        "units": {
+          "time": "abstract time units"
+        },
+        "data": {
+          "algorithm": "SJF",
+          "timeline": [
+            {
+              "id": "A",
+              "start": 0,
+              "end": 4
+            },
+            {
+              "id": "C",
+              "start": 4,
+              "end": 5
+            },
+            {
+              "id": "B",
+              "start": 5,
+              "end": 10
+            }
+          ],
+          "jobs": [
+            {
+              "id": "A",
+              "completion": 4,
+              "turnaround": 4,
+              "waiting": 0,
+              "response": 0,
+              "cpu_time": 4,
+              "io_time": 0,
+              "max_ready_wait": 0
+            },
+            {
+              "id": "B",
+              "completion": 10,
+              "turnaround": 9,
+              "waiting": 4,
+              "response": 4,
+              "cpu_time": 5,
+              "io_time": 0,
+              "max_ready_wait": 4
+            },
+            {
+              "id": "C",
+              "completion": 5,
+              "turnaround": 3,
+              "waiting": 2,
+              "response": 2,
+              "cpu_time": 1,
+              "io_time": 0,
+              "max_ready_wait": 2
+            }
+          ],
+          "events": [
+            {
+              "tick": 0,
+              "id": "A",
+              "event": "arrival"
+            },
+            {
+              "tick": 1,
+              "id": "B",
+              "event": "arrival"
+            },
+            {
+              "tick": 2,
+              "id": "C",
+              "event": "arrival"
+            },
+            {
+              "tick": 4,
+              "id": "A",
+              "event": "complete"
+            },
+            {
+              "tick": 5,
+              "id": "C",
+              "event": "complete"
+            },
+            {
+              "tick": 10,
+              "id": "B",
+              "event": "complete"
+            }
+          ],
+          "mean_waiting": 2.0,
+          "mean_response": 2.0,
+          "mean_turnaround": 5.333333333333333,
+          "cpu_utilization": 1.0,
+          "assumptions": [
+            "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+            "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+            "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    },
+    {
+      "tool": "simulate_scheduler",
+      "arguments": {
+        "algorithm": "RR",
+        "quantum": 2,
+        "jobs": [
+          {
+            "id": "A",
+            "arrival": 0,
+            "burst": 4
+          },
+          {
+            "id": "B",
+            "arrival": 1,
+            "burst": 5
+          },
+          {
+            "id": "C",
+            "arrival": 2,
+            "burst": 1
+          }
+        ]
+      },
+      "status": "PASSED",
+      "result": {
+        "ok": true,
+        "kind": "simulation",
+        "sampled_at": "2026-11-18T13:31:26.493872+00:00",
+        "platform": "Linux",
+        "source": "students.algorithms.scheduler",
+        "units": {
+          "time": "abstract time units"
+        },
+        "data": {
+          "algorithm": "RR",
+          "timeline": [
+            {
+              "id": "A",
+              "start": 0,
+              "end": 2
+            },
+            {
+              "id": "B",
+              "start": 2,
+              "end": 4
+            },
+            {
+              "id": "C",
+              "start": 4,
+              "end": 5
+            },
+            {
+              "id": "A",
+              "start": 5,
+              "end": 7
+            },
+            {
+              "id": "B",
+              "start": 7,
+              "end": 10
+            }
+          ],
+          "jobs": [
+            {
+              "id": "A",
+              "completion": 7,
+              "turnaround": 7,
+              "waiting": 3,
+              "response": 0,
+              "cpu_time": 4,
+              "io_time": 0,
+              "max_ready_wait": 3
+            },
+            {
+              "id": "B",
+              "completion": 10,
+              "turnaround": 9,
+              "waiting": 4,
+              "response": 1,
+              "cpu_time": 5,
+              "io_time": 0,
+              "max_ready_wait": 3
+            },
+            {
+              "id": "C",
+              "completion": 5,
+              "turnaround": 3,
+              "waiting": 2,
+              "response": 2,
+              "cpu_time": 1,
+              "io_time": 0,
+              "max_ready_wait": 2
+            }
+          ],
+          "events": [
+            {
+              "tick": 0,
+              "id": "A",
+              "event": "arrival"
+            },
+            {
+              "tick": 1,
+              "id": "B",
+              "event": "arrival"
+            },
+            {
+              "tick": 2,
+              "id": "A",
+              "event": "quantum_expired"
+            },
+            {
+              "tick": 2,
+              "id": "C",
+              "event": "arrival"
+            },
+            {
+              "tick": 4,
+              "id": "B",
+              "event": "quantum_expired"
+            },
+            {
+              "tick": 5,
+              "id": "C",
+              "event": "complete"
+            },
+            {
+              "tick": 7,
+              "id": "A",
+              "event": "complete"
+            },
+            {
+              "tick": 9,
+              "id": "B",
+              "event": "quantum_expired"
+            },
+            {
+              "tick": 10,
+              "id": "B",
+              "event": "complete"
+            }
+          ],
+          "mean_waiting": 3.0,
+          "mean_response": 1.0,
+          "mean_turnaround": 6.333333333333333,
+          "cpu_utilization": 1.0,
+          "assumptions": [
+            "单CPU，IO独立等待且可重叠，切换无额外耗时；利用率为0..1。",
+            "FCFS/SJF不抢占；SJF比较已就绪任务的下一CPU段，并列按就绪顺序。",
+            "RR先接收到达及IO完成任务，再把用完时间片的任务放回队尾。"
+          ]
+        },
+        "error": null,
+        "limitations": []
+      }
+    }
+  ],
+  "module_tools": {},
+  "success": true,
+  "status": "passed",
+  "finished_at": "2026-11-18T13:31:26.554798+00:00"
+}
