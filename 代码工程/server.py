@@ -2,7 +2,7 @@
 import functools
 import os
 from typing import Annotated, Literal
-from pydantic import Field
+from pydantic import Field, StrictInt
 from mcp.server.fastmcp import FastMCP
 import os_tools as ops
 from lab_common import StudentTaskPending
@@ -50,13 +50,13 @@ def get_process_memory(pid: Annotated[int,Field(ge=1)],max_maps: Annotated[int,F
 
 @mcp.tool()
 @bounded
-def analyze_memory_patterns(pages: Annotated[list[int],Field(min_length=1,max_length=128)]|None=None) -> dict:
+def analyze_memory_patterns(pages: Annotated[list[StrictInt],Field(min_length=1,max_length=128)]|None=None) -> dict:
     """只分析显式页面引用序列的重复间隔与相邻比例；不代表真实系统访问模式。"""
     return ops.analyze_memory_patterns(pages)
 
 @mcp.tool()
 @bounded
-def simulate_page_fault(algorithm: Literal['FIFO','LRU','CLOCK','OPT','RANDOM','SECOND_CHANCE','HYBRID']='FIFO',frames: Annotated[int,Field(ge=1,le=16)]=3,pages: Annotated[list[int],Field(min_length=1,max_length=128)]|None=None,seed: Annotated[int,Field(ge=0,le=4294967295)]=42) -> dict:
+def simulate_page_fault(algorithm: Literal['FIFO','LRU','CLOCK','OPT','RANDOM','SECOND_CHANCE','HYBRID']='FIFO',frames: Annotated[StrictInt,Field(ge=1,le=16)]=3,pages: Annotated[list[StrictInt],Field(min_length=1,max_length=128)]|None=None,seed: Annotated[StrictInt,Field(ge=0,le=4294967295)]=42) -> dict:
     """教学模拟页面置换，返回缺页率和逐步日志；不改变内核。"""
     return ops.simulate_page_fault(algorithm,frames,pages,seed)
 
